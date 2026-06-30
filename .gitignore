@@ -42,7 +42,9 @@ Thumbs.db
 # Local logs
 *.log
 
-/.agents
-/.codex
+# Keep local-only working material out of Git
 /docs
 /tests
+
+/.agents
+/.codex
