@@ -21,9 +21,7 @@ if "blinker" not in sys.modules:
                 self._receivers.clear()
                 return True
             before = len(self._receivers)
-            self._receivers = [
-                item for item in self._receivers if item != (receiver, sender)
-            ]
+            self._receivers = [item for item in self._receivers if item != (receiver, sender)]
             return len(self._receivers) != before
 
         def send(self, *args, **kwargs):
@@ -51,30 +49,45 @@ STARTER_ROOT = Path(__file__).resolve().parents[1]
 if str(STARTER_ROOT) not in sys.path:
     sys.path.insert(0, str(STARTER_ROOT))
 
-from research_summarizer_ai_agent.pipeline import run_research  # noqa: E402
-from research_summarizer_ai_agent.planner import build_research_plan  # noqa: E402
-from research_summarizer_ai_agent.synthesizer import build_report_markdown  # noqa: E402
+from research_summarizer_ai_agent.agents import build_view_model  # noqa: E402
+from research_summarizer_ai_agent.agents import get_openrouter_model_name  # noqa: E402
+from research_summarizer_ai_agent.agents import get_runtime_mode  # noqa: E402
+from research_summarizer_ai_agent.agents import run_simple_agent  # noqa: E402
 
 
-st.set_page_config(page_title="Research Summarizer", page_icon="R", layout="wide")
-st.title("Research Summarizer")
-st.caption("Search multiple primary sources and synthesize a sectioned digest.")
+st.set_page_config(page_title="Simple Research Agent", page_icon="R", layout="wide")
+st.title("Simple Research Agent")
+st.caption("Send a prompt to one LangChain agent that can search the web and read pages.")
 
-topic = st.text_input("Topic or question", placeholder="e.g. How do research summarizers work?")
+with st.sidebar:
+    st.subheader("Runtime")
+    runtime_mode = get_runtime_mode()
+    st.caption(f"Mode: {runtime_mode}")
+    if runtime_mode == "openrouter":
+        st.caption(f"Model: {get_openrouter_model_name()}")
 
-if st.button("Research", type="primary"):
-    if not topic.strip():
-        st.warning("Enter a topic or question first.")
+user_input = st.text_area(
+    "Your input",
+    placeholder="Ask the agent something like: Summarize the latest ideas behind AI research agents.",
+    height=140,
+)
+
+if st.button("Run Agent", type="primary"):
+    if not user_input.strip():
+        st.warning("Enter a prompt first.")
     else:
-        try:
-            plan = build_research_plan(topic)
-            report = run_research(topic)
-        except Exception as exc:
-            st.error(f"Research failed: {exc}")
-        else:
-            st.subheader("Planned sub-questions")
-            for question in plan.sub_questions:
-                st.write(f"- {question}")
+        result = run_simple_agent(user_input)
+        view_model = build_view_model(result)
 
-            st.subheader("Report")
-            st.markdown(build_report_markdown(plan, report))
+        if bool(view_model["used_fallback"]):
+            st.warning("Fallback response was used.")
+            if str(view_model["error_message"]).strip():
+                st.code(str(view_model["error_message"]))
+
+        st.subheader("Response")
+        st.markdown(str(view_model["response"]))
+
+        if view_model["sources"]:
+            st.markdown("### Sources")
+            for url in view_model["sources"]:
+                st.write(f"- {url}")
