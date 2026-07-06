@@ -1,0 +1,172 @@
+[
+  {
+    "run_id": "run_000001",
+    "case_type": "shipping_status",
+    "eval_result": "missing_tool_call",
+    "outcome": "failed",
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "summary": "The user requested a delivery date update for order ORD-900001. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize a tracking tool to provide a specific delivery date, instead relying on a generic estimate. Consequently, the final response lacked the precision required to resolve the customer's inquiry."
+  },
+  {
+    "run_id": "run_000002",
+    "case_type": "account_login",
+    "eval_result": "correct_resolution",
+    "outcome": "resolved",
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "summary": "The user requested assistance with an account login issue. The agent verified the account status using the `account_lookup` tool and subsequently triggered a password reset via the `password_reset` tool. The process was completed successfully without errors or the need for human intervention. The issue was resolved by providing the user with a password reset link."
+  },
+  {
+    "run_id": "run_000003",
+    "case_type": "refund_request",
+    "eval_result": "unnecessary_escalation",
+    "outcome": "escalated",
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools. Despite the clear eligibility, the agent unnecessarily escalated the request to a human representative. The process concluded with the user being informed that a specialist would review their case."
+  },
+  {
+    "run_id": "run_000004",
+    "case_type": "shipping_status",
+    "eval_result": "missing_tool_call",
+    "outcome": "failed",
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "summary": "The user requested a specific delivery date for order ORD-900004. The agent successfully retrieved the order status and general shipping policy but failed to query the carrier's tracking API to provide the actual delivery date. Consequently, the agent provided a generic estimate rather than the requested information, resulting in an incomplete resolution."
+  },
+  {
+    "run_id": "run_000005",
+    "case_type": "refund_request",
+    "eval_result": "unnecessary_escalation",
+    "outcome": "escalated",
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "summary": "The user requested a refund for storage bins from order ORD-900005, which the agent confirmed was within the 30-day eligibility window. Despite the item meeting all policy criteria, the agent unnecessarily escalated the request to a human support queue. The process concluded with the agent informing the customer that their case was being reviewed by the human team."
+  },
+  {
+    "run_id": "run_000006",
+    "case_type": "refund_request",
+    "eval_result": "unnecessary_escalation",
+    "outcome": "escalated",
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "summary": "The user requested a refund for a storage bin order that met all stated eligibility criteria. Although the agent successfully verified the order status and confirmed the item was within the 30-day return window, it unnecessarily escalated the request to a human agent. Consequently, the process concluded with a ticket creation rather than an automated resolution."
+  },
+  {
+    "run_id": "run_000007",
+    "case_type": "account_login",
+    "eval_result": "correct_resolution",
+    "outcome": "resolved",
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "summary": "The user requested assistance with a login failure, prompting the agent to verify the account status via the `account_lookup` tool. Finding the account active and without security holds, the agent successfully triggered a password reset email. The issue was resolved efficiently without errors or the need for human intervention."
+  },
+  {
+    "run_id": "run_000008",
+    "case_type": "account_login",
+    "eval_result": "retry_loop",
+    "outcome": "failed",
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "summary": "The user requested assistance regaining access to their account after failed password reset attempts. The agent identified a login lock but repeatedly triggered the password reset tool four times despite the user reporting continued failure. This repetitive execution failed to resolve the underlying issue, resulting in an unsuccessful outcome. The agent failed to escalate the issue or investigate the cause of the reset link failure beyond simple retries."
+  },
+  {
+    "run_id": "run_000009",
+    "case_type": "refund_request",
+    "eval_result": "unnecessary_escalation",
+    "outcome": "escalated",
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "summary": "The user requested a refund for a phone case from order ORD-900009, which the agent confirmed was within the 30-day eligibility window. Despite verifying that the item met all policy requirements, the agent unnecessarily escalated the request to a human support queue. The process concluded with the agent informing the customer that their case had been forwarded for manual review."
+  },
+  {
+    "run_id": "run_000010",
+    "case_type": "exchange_request",
+    "eval_result": "correct_resolution",
+    "outcome": "resolved",
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search"
+    ],
+    "summary": "The user requested an exchange for an AeroBrew coffee maker, prompting the agent to verify the order status and applicable return policies. The agent successfully confirmed the order was delivered within the 30-day eligibility window using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a correct resolution confirming the user's eligibility for an exchange."
+  },
+  {
+    "run_id": "run_000011",
+    "case_type": "shipping_status",
+    "eval_result": "correct_resolution",
+    "outcome": "resolved",
+    "tools_used": [
+      "order_lookup",
+      "shipment_tracking"
+    ],
+    "summary": "The user requested the current status of order ORD-900011. The agent successfully retrieved the tracking number using the `order_lookup` tool and obtained the delivery status via `shipment_tracking`. No errors or retries occurred during the process. The agent provided an accurate update, confirming the order is in transit with an estimated delivery for tomorrow."
+  },
+  {
+    "run_id": "run_000012",
+    "case_type": "payment_issue",
+    "eval_result": "correct_resolution",
+    "outcome": "resolved",
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "summary": "The user requested an investigation into a suspected double charge for order ORD-900012. The agent utilized the `order_lookup` tool to identify a single successful charge alongside a pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. No errors occurred during execution, and the agent successfully resolved the issue by explaining that the pending charge would automatically expire."
+  },
+  {
+    "run_id": "run_000013",
+    "case_type": "refund_request",
+    "eval_result": "unnecessary_escalation",
+    "outcome": "escalated",
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "summary": "The user requested a refund for an order that met all eligibility criteria according to the system's policy search. Despite the order being within the 30-day return window, the agent unnecessarily escalated the request to a human representative. The process concluded with the agent informing the customer of the escalation, resulting in an inefficient resolution for a straightforward case."
+  },
+  {
+    "run_id": "run_000014",
+    "case_type": "account_login",
+    "eval_result": "retry_loop",
+    "outcome": "failed",
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "summary": "The user requested assistance with a failing password reset link for their locked account. The agent successfully identified the account lock but entered an ineffective retry loop, repeatedly triggering the `password_reset` tool six times despite consistent failure reports. The execution failed to resolve the issue, as the agent lacked a strategy to escalate or address the underlying account lock."
+  },
+  {
+    "run_id": "run_000015",
+    "case_type": "exchange_request",
+    "eval_result": "timeout",
+    "outcome": "failed",
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "summary": "The user requested assistance with order ORD-900015 due to persistent technical issues. The agent attempted to retrieve order details and search the knowledge base, but both operations suffered from significant latency. Ultimately, the process failed after multiple retries due to a system timeout, resulting in an incomplete request and an apology to the user."
+  }
+]

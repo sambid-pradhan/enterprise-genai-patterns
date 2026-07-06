@@ -1,0 +1,696 @@
+[
+  {
+    "run_id": "run_000001",
+    "timestamp": "2026-06-03T01:47:06Z",
+    "customer_tier": "enterprise",
+    "region": "EU",
+    "case_type": "shipping_status",
+    "user_message": "My package for order ORD-900001 seems late. What is the delivery date?",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order summary",
+        "tool": "order_lookup",
+        "result": "Order ORD-900001 is marked shipped; tracking id available.",
+        "latency_ms": 340
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search delivery FAQ",
+        "tool": "knowledge_base_search",
+        "result": "Standard delivery usually takes 3-5 business days.",
+        "latency_ms": 373
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "retry_count": 0,
+    "human_review": false,
+    "final_response": "The order is on its way and should arrive around 4 business days from now.",
+    "outcome": "failed",
+    "eval_result": "missing_tool_call",
+    "latency_seconds": 3.87,
+    "cost_usd": 0.0012,
+    "token_input": 936,
+    "token_output": 670
+  },
+  {
+    "run_id": "run_000002",
+    "timestamp": "2026-06-12T22:13:02Z",
+    "customer_tier": "platinum",
+    "region": "US",
+    "case_type": "account_login",
+    "user_message": "I cannot sign in to my account. Can you help?",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up account",
+        "tool": "account_lookup",
+        "result": "Account is active; no security hold present.",
+        "latency_ms": 366
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Password reset email sent successfully.",
+        "latency_ms": 450
+      }
+    ],
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "retry_count": 0,
+    "human_review": false,
+    "final_response": "I sent a password reset link to the email on your account.",
+    "outcome": "resolved",
+    "eval_result": "correct_resolution",
+    "latency_seconds": 1.41,
+    "cost_usd": 0.001,
+    "token_input": 1376,
+    "token_output": 370
+  },
+  {
+    "run_id": "run_000003",
+    "timestamp": "2026-06-07T00:07:46Z",
+    "customer_tier": "gold",
+    "region": "IN",
+    "case_type": "refund_request",
+    "user_message": "Can you refund my order ORD-900003? The SoundPeak earbuds is still sealed and inside the return window.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order details",
+        "tool": "order_lookup",
+        "result": "Order ORD-900003 delivered 16 days ago; item is refundable.",
+        "latency_ms": 426
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search refund eligibility policy",
+        "tool": "refund_policy_search",
+        "result": "Policy: sealed items are refundable within 30 days.",
+        "latency_ms": 536
+      },
+      {
+        "step": 3,
+        "agent": "support_agent",
+        "action": "Escalate refund decision",
+        "tool": "escalation_service",
+        "result": "Human queue ticket created despite policy match.",
+        "latency_ms": 662
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "retry_count": 0,
+    "human_review": true,
+    "final_response": "A support specialist will review this refund request and follow up shortly.",
+    "outcome": "escalated",
+    "eval_result": "unnecessary_escalation",
+    "latency_seconds": 2.38,
+    "cost_usd": 0.0012,
+    "token_input": 1651,
+    "token_output": 439
+  },
+  {
+    "run_id": "run_000004",
+    "timestamp": "2026-06-09T06:05:39Z",
+    "customer_tier": "enterprise",
+    "region": "UK",
+    "case_type": "shipping_status",
+    "user_message": "My package for order ORD-900004 seems late. What is the delivery date?",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order summary",
+        "tool": "order_lookup",
+        "result": "Order ORD-900004 is marked shipped; tracking id available.",
+        "latency_ms": 180
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search delivery FAQ",
+        "tool": "knowledge_base_search",
+        "result": "Standard delivery usually takes 3-5 business days.",
+        "latency_ms": 305
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "retry_count": 0,
+    "human_review": false,
+    "final_response": "It looks like delivery is likely within 5 days.",
+    "outcome": "failed",
+    "eval_result": "missing_tool_call",
+    "latency_seconds": 1.47,
+    "cost_usd": 0.0014,
+    "token_input": 1887,
+    "token_output": 545
+  },
+  {
+    "run_id": "run_000005",
+    "timestamp": "2026-06-15T23:58:29Z",
+    "customer_tier": "platinum",
+    "region": "EU",
+    "case_type": "refund_request",
+    "user_message": "Please help me return NestFold storage bins from ORD-900005; I checked and it should qualify.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order details",
+        "tool": "order_lookup",
+        "result": "Order ORD-900005 delivered 18 days ago; item is refundable.",
+        "latency_ms": 306
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search refund eligibility policy",
+        "tool": "refund_policy_search",
+        "result": "Policy: sealed items are refundable within 30 days.",
+        "latency_ms": 517
+      },
+      {
+        "step": 3,
+        "agent": "support_agent",
+        "action": "Escalate refund decision",
+        "tool": "escalation_service",
+        "result": "Human queue ticket created despite policy match.",
+        "latency_ms": 446
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "retry_count": 0,
+    "human_review": true,
+    "final_response": "I have sent this refund case to our human support team for review.",
+    "outcome": "escalated",
+    "eval_result": "unnecessary_escalation",
+    "latency_seconds": 3.11,
+    "cost_usd": 0.0012,
+    "token_input": 2058,
+    "token_output": 292
+  },
+  {
+    "run_id": "run_000006",
+    "timestamp": "2026-06-12T00:32:43Z",
+    "customer_tier": "gold",
+    "region": "CA",
+    "case_type": "refund_request",
+    "user_message": "I need a refund for NestFold storage bins on order ORD-900006. It arrived 7 days ago and is unused.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order details",
+        "tool": "order_lookup",
+        "result": "Order ORD-900006 delivered 7 days ago; item is refundable.",
+        "latency_ms": 243
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search refund eligibility policy",
+        "tool": "refund_policy_search",
+        "result": "Policy: sealed items are refundable within 30 days.",
+        "latency_ms": 305
+      },
+      {
+        "step": 3,
+        "agent": "support_agent",
+        "action": "Escalate refund decision",
+        "tool": "escalation_service",
+        "result": "Human queue ticket created despite policy match.",
+        "latency_ms": 846
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "retry_count": 0,
+    "human_review": true,
+    "final_response": "A support specialist will review this refund request and follow up shortly.",
+    "outcome": "escalated",
+    "eval_result": "unnecessary_escalation",
+    "latency_seconds": 4.17,
+    "cost_usd": 0.0009,
+    "token_input": 939,
+    "token_output": 457
+  },
+  {
+    "run_id": "run_000007",
+    "timestamp": "2026-06-18T19:24:31Z",
+    "customer_tier": "platinum",
+    "region": "CA",
+    "case_type": "account_login",
+    "user_message": "I cannot sign in to my account. Can you help?",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up account",
+        "tool": "account_lookup",
+        "result": "Account is active; no security hold present.",
+        "latency_ms": 515
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Password reset email sent successfully.",
+        "latency_ms": 582
+      }
+    ],
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "retry_count": 0,
+    "human_review": false,
+    "final_response": "I sent a password reset link to the email on your account.",
+    "outcome": "resolved",
+    "eval_result": "correct_resolution",
+    "latency_seconds": 1.51,
+    "cost_usd": 0.0009,
+    "token_input": 918,
+    "token_output": 427
+  },
+  {
+    "run_id": "run_000008",
+    "timestamp": "2026-06-11T07:01:11Z",
+    "customer_tier": "enterprise",
+    "region": "EU",
+    "case_type": "account_login",
+    "user_message": "I have tried resetting my password for customer8@example.com, but I still cannot get in.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up account status",
+        "tool": "account_lookup",
+        "result": "Account exists; login lock present after repeated attempts.",
+        "latency_ms": 327
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 1 sent; customer reports link still fails.",
+        "latency_ms": 374
+      },
+      {
+        "step": 3,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 2 sent; customer reports link still fails.",
+        "latency_ms": 717
+      },
+      {
+        "step": 4,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 3 sent; customer reports link still fails.",
+        "latency_ms": 386
+      },
+      {
+        "step": 5,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 4 sent; customer reports link still fails.",
+        "latency_ms": 725
+      }
+    ],
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "retry_count": 4,
+    "human_review": false,
+    "final_response": "The reset process was retried several times and did not restore access.",
+    "outcome": "failed",
+    "eval_result": "retry_loop",
+    "latency_seconds": 4.42,
+    "cost_usd": 0.0025,
+    "token_input": 2738,
+    "token_output": 477
+  },
+  {
+    "run_id": "run_000009",
+    "timestamp": "2026-06-21T11:24:39Z",
+    "customer_tier": "enterprise",
+    "region": "EU",
+    "case_type": "refund_request",
+    "user_message": "Please help me return FlexGrip phone case from ORD-900009; I checked and it should qualify.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order details",
+        "tool": "order_lookup",
+        "result": "Order ORD-900009 delivered 8 days ago; item is refundable.",
+        "latency_ms": 661
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search refund eligibility policy",
+        "tool": "refund_policy_search",
+        "result": "Policy: sealed items are refundable within 30 days.",
+        "latency_ms": 423
+      },
+      {
+        "step": 3,
+        "agent": "support_agent",
+        "action": "Escalate refund decision",
+        "tool": "escalation_service",
+        "result": "Human queue ticket created despite policy match.",
+        "latency_ms": 820
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "retry_count": 0,
+    "human_review": true,
+    "final_response": "I have sent this refund case to our human support team for review.",
+    "outcome": "escalated",
+    "eval_result": "unnecessary_escalation",
+    "latency_seconds": 4.41,
+    "cost_usd": 0.0013,
+    "token_input": 1357,
+    "token_output": 643
+  },
+  {
+    "run_id": "run_000010",
+    "timestamp": "2026-06-29T20:34:15Z",
+    "customer_tier": "gold",
+    "region": "EU",
+    "case_type": "exchange_request",
+    "user_message": "I need to exchange AeroBrew coffee maker for a different size.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order",
+        "tool": "order_lookup",
+        "result": "Order ORD-900010 delivered 6 days ago.",
+        "latency_ms": 535
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Check exchange policy",
+        "tool": "refund_policy_search",
+        "result": "Exchange allowed within 30 days for unused items.",
+        "latency_ms": 326
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search"
+    ],
+    "retry_count": 0,
+    "human_review": false,
+    "final_response": "Your item is within the exchange window. You can exchange it for another size.",
+    "outcome": "resolved",
+    "eval_result": "correct_resolution",
+    "latency_seconds": 1.92,
+    "cost_usd": 0.0014,
+    "token_input": 1387,
+    "token_output": 667
+  },
+  {
+    "run_id": "run_000011",
+    "timestamp": "2026-06-07T15:08:09Z",
+    "customer_tier": "silver",
+    "region": "EU",
+    "case_type": "shipping_status",
+    "user_message": "Can you tell me where my order ORD-900011 is right now?",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order",
+        "tool": "order_lookup",
+        "result": "Order ORD-900011 shipped with tracking TRK-700011.",
+        "latency_ms": 269
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Check tracking status",
+        "tool": "shipment_tracking",
+        "result": "TRK-700011: in transit; estimated delivery tomorrow.",
+        "latency_ms": 325
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "shipment_tracking"
+    ],
+    "retry_count": 0,
+    "human_review": false,
+    "final_response": "Your order is in transit and is estimated to arrive tomorrow.",
+    "outcome": "resolved",
+    "eval_result": "correct_resolution",
+    "latency_seconds": 2.16,
+    "cost_usd": 0.0011,
+    "token_input": 1377,
+    "token_output": 448
+  },
+  {
+    "run_id": "run_000012",
+    "timestamp": "2026-06-04T04:00:13Z",
+    "customer_tier": "platinum",
+    "region": "EU",
+    "case_type": "payment_issue",
+    "user_message": "My payment for order ORD-900012 was charged twice. Can you check?",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order payment",
+        "tool": "order_lookup",
+        "result": "Order ORD-900012: one successful charge and one pending authorization.",
+        "latency_ms": 474
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search payment policy",
+        "tool": "knowledge_base_search",
+        "result": "Pending authorizations usually drop within 3-5 business days.",
+        "latency_ms": 344
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "retry_count": 0,
+    "human_review": false,
+    "final_response": "I found one completed charge and one pending authorization, which should drop off automatically.",
+    "outcome": "resolved",
+    "eval_result": "correct_resolution",
+    "latency_seconds": 2.55,
+    "cost_usd": 0.0013,
+    "token_input": 1420,
+    "token_output": 595
+  },
+  {
+    "run_id": "run_000013",
+    "timestamp": "2026-06-19T01:58:54Z",
+    "customer_tier": "platinum",
+    "region": "IN",
+    "case_type": "refund_request",
+    "user_message": "I need a refund for NestFold storage bins on order ORD-900013. It arrived 18 days ago and is unused.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order details",
+        "tool": "order_lookup",
+        "result": "Order ORD-900013 delivered 18 days ago; item is refundable.",
+        "latency_ms": 359
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search refund eligibility policy",
+        "tool": "refund_policy_search",
+        "result": "Policy: sealed items are refundable within 30 days.",
+        "latency_ms": 403
+      },
+      {
+        "step": 3,
+        "agent": "support_agent",
+        "action": "Escalate refund decision",
+        "tool": "escalation_service",
+        "result": "Human queue ticket created despite policy match.",
+        "latency_ms": 857
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "retry_count": 0,
+    "human_review": true,
+    "final_response": "Your order appears to need a specialist review, so I have escalated the refund request.",
+    "outcome": "escalated",
+    "eval_result": "unnecessary_escalation",
+    "latency_seconds": 3.11,
+    "cost_usd": 0.0011,
+    "token_input": 1618,
+    "token_output": 329
+  },
+  {
+    "run_id": "run_000014",
+    "timestamp": "2026-06-22T14:30:58Z",
+    "customer_tier": "silver",
+    "region": "IN",
+    "case_type": "account_login",
+    "user_message": "I cannot log in to my account for customer14@example.com; the reset link keeps failing.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up account status",
+        "tool": "account_lookup",
+        "result": "Account exists; login lock present after repeated attempts.",
+        "latency_ms": 401
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 1 sent; customer reports link still fails.",
+        "latency_ms": 856
+      },
+      {
+        "step": 3,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 2 sent; customer reports link still fails.",
+        "latency_ms": 827
+      },
+      {
+        "step": 4,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 3 sent; customer reports link still fails.",
+        "latency_ms": 277
+      },
+      {
+        "step": 5,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 4 sent; customer reports link still fails.",
+        "latency_ms": 335
+      },
+      {
+        "step": 6,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 5 sent; customer reports link still fails.",
+        "latency_ms": 688
+      },
+      {
+        "step": 7,
+        "agent": "support_agent",
+        "action": "Send password reset",
+        "tool": "password_reset",
+        "result": "Reset email attempt 6 sent; customer reports link still fails.",
+        "latency_ms": 388
+      }
+    ],
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "retry_count": 6,
+    "human_review": false,
+    "final_response": "I tried resetting the password again, but the login issue is still unresolved.",
+    "outcome": "failed",
+    "eval_result": "retry_loop",
+    "latency_seconds": 4.68,
+    "cost_usd": 0.0025,
+    "token_input": 2450,
+    "token_output": 552
+  },
+  {
+    "run_id": "run_000015",
+    "timestamp": "2026-06-16T05:00:21Z",
+    "customer_tier": "platinum",
+    "region": "UK",
+    "case_type": "exchange_request",
+    "user_message": "I need help with order ORD-900015; the chat keeps hanging.",
+    "agent_steps": [
+      {
+        "step": 1,
+        "agent": "support_agent",
+        "action": "Look up order",
+        "tool": "order_lookup",
+        "result": "Order ORD-900015 lookup returned slowly.",
+        "latency_ms": 2833
+      },
+      {
+        "step": 2,
+        "agent": "support_agent",
+        "action": "Search knowledge base",
+        "tool": "knowledge_base_search",
+        "result": "Search timed out before final answer.",
+        "latency_ms": 4170
+      }
+    ],
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "retry_count": 2,
+    "human_review": false,
+    "final_response": "I am sorry, I could not complete the request before the session timed out.",
+    "outcome": "failed",
+    "eval_result": "timeout",
+    "latency_seconds": 7.46,
+    "cost_usd": 0.0019,
+    "token_input": 1976,
+    "token_output": 389
+  }
+]

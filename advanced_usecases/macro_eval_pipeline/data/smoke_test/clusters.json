@@ -1,0 +1,74 @@
+[
+  {
+    "cluster_id": 1,
+    "size": 2,
+    "eval_result_counts": {
+      "missing_tool_call": 1,
+      "unnecessary_escalation": 1
+    },
+    "case_type_counts": {
+      "shipping_status": 1,
+      "refund_request": 1
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000001",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "A user from an enterprise EU account inquired about a late package for order ORD-900001, seeking the actual delivery date. The agent correctly looked up the order (retrieving a tracking ID) and consulted the delivery FAQ, but failed to use the tracking ID to fetch the specific delivery date. Instead of calling a tracking tool, it provided a generic estimate of \"4 business days from now.\" This decision led to an incomplete answer, missing the user's primary intent, and the trace was flagged for a missing tool call, resulting in a failed outcome."
+      },
+      {
+        "run_id": "run_000003",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "A Gold-tier customer requested a refund for sealed earbuds within the 30-day return window. The agent used order lookup and policy search tools, confirming the order was eligible for a straightforward refund. Despite matching the policy, the agent escalated the decision to a human queue instead of processing the refund automatically. This unnecessary escalation resulted in a delayed response, telling the customer a specialist would follow up. The final outcome was an escalated ticket rather than an immediate refund."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Unnecessary Escalation or Incomplete Action",
+      "root_cause": "The agent fails to complete the final actionable step after gathering sufficient information, either by not using a required tool or by unnecessarily escalating to a human.",
+      "business_impact": "Customer dissatisfaction due to delayed resolution, increased operational costs from human intervention, and reduced trust in automated support.",
+      "suggested_fix": "Implement a mandatory tool-use check before escalation or response generation, and enforce a policy that if all eligibility criteria are met, the agent must execute the final action (e.g., tracking lookup or refund processing) without deferring to a human."
+    }
+  },
+  {
+    "cluster_id": 0,
+    "size": 1,
+    "eval_result_counts": {
+      "correct_resolution": 1
+    },
+    "case_type_counts": {
+      "account_login": 1
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000002",
+        "case_type": "account_login",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "A platinum-tier US customer reported being unable to sign in. The agent first verified the account was active with no security hold, then immediately sent a password reset email. No errors or retries occurred, and the issue was resolved via the password reset."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Password Reset for Login Issues",
+      "root_cause": "Platinum-tier US customer unable to sign in, likely due to forgotten password or credential issue, with no account lock or security hold detected.",
+      "business_impact": "High-value customer experienced login disruption, potentially leading to frustration and churn risk for a key account segment.",
+      "suggested_fix": "Implement proactive password expiration reminders or self-service password reset options to reduce support tickets and improve user experience."
+    }
+  }
+]

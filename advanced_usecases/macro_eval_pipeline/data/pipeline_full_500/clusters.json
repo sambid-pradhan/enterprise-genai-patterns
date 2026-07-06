@@ -1,0 +1,1942 @@
+[
+  {
+    "cluster_id": 3,
+    "size": 111,
+    "eval_result_counts": {
+      "unnecessary_escalation": 21,
+      "wrong_policy_retrieval": 50,
+      "correct_resolution": 33,
+      "successful_with_human_review": 7
+    },
+    "case_type_counts": {
+      "refund_request": 53,
+      "damaged_item": 44,
+      "exchange_request": 14
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000338",
+        "case_type": "refund_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900338. The agent successfully verified the order status but incorrectly retrieved a \"final-sale\" policy instead of the applicable damaged-item policy. Consequently, the agent erroneously denied the refund request based on this flawed information. The execution resulted in a failed outcome due to the retrieval error."
+      },
+      {
+        "run_id": "run_000289",
+        "case_type": "exchange_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900289. The agent successfully verified the order status but incorrectly retrieved a final-sale policy instead of the applicable damaged-item policy. Consequently, the agent erroneously denied the refund request, leading to a failed outcome."
+      },
+      {
+        "run_id": "run_000397",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900397. Although the agent successfully verified the order status, it retrieved an incorrect \"final-sale\" policy instead of the relevant damaged-item policy. Consequently, the agent incorrectly denied the refund request, leading to a failed outcome."
+      },
+      {
+        "run_id": "run_000487",
+        "case_type": "refund_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900487. The agent successfully verified the order status but incorrectly retrieved a \"final-sale\" policy instead of the applicable damaged-item policy. Consequently, the agent erroneously denied the refund request based on this faulty information. The execution resulted in a failed outcome due to the retrieval error."
+      },
+      {
+        "run_id": "run_000308",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900308. The agent successfully verified the order status but incorrectly retrieved a \"final-sale\" policy instead of the relevant damaged-item policy. Consequently, the agent erroneously denied the refund request based on the wrong information. The execution resulted in a failed outcome due to this retrieval error."
+      },
+      {
+        "run_id": "run_000054",
+        "case_type": "exchange_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900054. The agent successfully retrieved the order details but incorrectly queried the final-sale policy instead of the damaged-item policy. Consequently, the agent erroneously informed the customer that they were ineligible for a refund. The execution resulted in a failure due to inaccurate policy retrieval."
+      },
+      {
+        "run_id": "run_000127",
+        "case_type": "exchange_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900127. Although the agent successfully verified the order status, it incorrectly retrieved a \"final-sale\" policy instead of the relevant damaged-item policy. Consequently, the agent erroneously denied the refund request based on this misinformation. The execution resulted in a failed outcome due to poor tool retrieval accuracy."
+      },
+      {
+        "run_id": "run_000135",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested refund options for a defective item from order ORD-900135. The agent successfully retrieved the order status but incorrectly queried the refund policy, retrieving a \"final-sale\" policy instead of the relevant damaged-item guidelines. Consequently, the agent provided an erroneous denial of service to the customer, resulting in a failed outcome."
+      },
+      {
+        "run_id": "run_000310",
+        "case_type": "refund_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900310. The agent successfully retrieved the order details but failed to identify the correct policy, incorrectly applying a \"final-sale\" rule instead of the damaged-item policy. Consequently, the agent erroneously denied the refund request, leading to a failed outcome."
+      },
+      {
+        "run_id": "run_000035",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900035. Although the agent successfully verified the order status, it incorrectly retrieved a \"final-sale\" policy instead of the relevant damaged-item policy. Consequently, the agent erroneously denied the refund request based on this incorrect information. The interaction resulted in a failed outcome due to poor tool retrieval accuracy."
+      },
+      {
+        "run_id": "run_000023",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested refund options for a defective item from order ORD-900023. Although the agent successfully verified the order status, it incorrectly retrieved a \"final-sale\" policy instead of the relevant damaged-item policy. Consequently, the agent erroneously denied the refund request based on this incorrect information. The execution resulted in a failed outcome due to the retrieval error."
+      },
+      {
+        "run_id": "run_000201",
+        "case_type": "refund_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900201. The agent successfully retrieved the order details but failed to identify the correct policy, incorrectly applying a final-sale restriction instead of the damaged-item policy. Consequently, the agent erroneously denied the refund request, leading to a failed outcome."
+      },
+      {
+        "run_id": "run_000466",
+        "case_type": "exchange_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900466. The agent successfully retrieved the order details but failed to identify the correct return policy, incorrectly applying a \"final-sale\" restriction instead of the damaged-item policy. Consequently, the agent provided an inaccurate response denying the refund, resulting in a failed outcome."
+      },
+      {
+        "run_id": "run_000353",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested refund options for a defective item from order ORD-900353. The agent successfully retrieved the order details but incorrectly queried the refund policy, resulting in the retrieval of a \"final-sale\" policy instead of the relevant damaged-item policy. Consequently, the agent provided an inaccurate denial of service to the customer, leading to a failed outcome."
+      },
+      {
+        "run_id": "run_000485",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested refund options for a defective item from order ORD-900485. The agent successfully retrieved the order status but incorrectly queried the refund policy, retrieving a \"final-sale\" policy instead of the relevant damaged-item guidelines. Consequently, the agent provided an inaccurate denial of service to the customer. The execution failed due to this retrieval error, resulting in a poor user experience."
+      },
+      {
+        "run_id": "run_000166",
+        "case_type": "refund_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900166. The agent successfully retrieved the order status but incorrectly queried the refund policy, resulting in the retrieval of a \"final-sale\" policy instead of the relevant damaged-item policy. Consequently, the agent erroneously denied the refund request based on this incorrect information. The execution failed due to a policy retrieval error."
+      },
+      {
+        "run_id": "run_000257",
+        "case_type": "refund_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund or exchange for a damaged item from order ORD-900257. The agent successfully retrieved the order details but incorrectly queried the final-sale policy instead of the damaged-item policy. Consequently, the agent erroneously denied the request based on the wrong policy, leading to a failed outcome."
+      },
+      {
+        "run_id": "run_000073",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested refund options for a defective item from order ORD-900073. Although the agent successfully verified the order status, it retrieved an incorrect \"final-sale\" policy instead of the relevant damaged-item policy. Consequently, the agent provided an inaccurate denial of service, leading to a failed outcome."
+      },
+      {
+        "run_id": "run_000177",
+        "case_type": "refund_request",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900177. The agent successfully retrieved the order status but incorrectly queried the refund policy, pulling a \"final-sale\" document instead of the relevant damaged-item policy. Consequently, the agent erroneously denied the refund request based on this incorrect information. The task resulted in a failure due to poor tool retrieval accuracy."
+      },
+      {
+        "run_id": "run_000125",
+        "case_type": "damaged_item",
+        "eval_result": "wrong_policy_retrieval",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested a refund for a defective item from order ORD-900125. The agent successfully retrieved the order details but incorrectly queried the final-sale policy instead of the damaged-item policy. Consequently, the agent erroneously denied the refund request based on the wrong information. The execution resulted in a failed outcome due to this policy retrieval error."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Incorrect Policy Retrieval for Damaged Items",
+      "root_cause": "The agent's retrieval tool consistently prioritizes or incorrectly selects the 'final-sale' policy document over the 'damaged-item' policy when processing refund requests for defective products.",
+      "business_impact": "High volume of erroneous refund denials for legitimate damaged-item claims, leading to increased customer support escalations, potential loss of customer trust, and operational inefficiency.",
+      "suggested_fix": "Implement stricter metadata filtering or semantic search constraints for the retrieval tool to ensure 'damaged-item' policies are prioritized when the user intent includes keywords like 'defective' or 'damaged'. Additionally, add a validation step to verify policy applicability before the agent issues a denial."
+    }
+  },
+  {
+    "cluster_id": 1,
+    "size": 110,
+    "eval_result_counts": {
+      "unnecessary_escalation": 99,
+      "incorrect_refund_decision": 7,
+      "correct_resolution": 4
+    },
+    "case_type_counts": {
+      "refund_request": 104,
+      "damaged_item": 4,
+      "exchange_request": 2
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000178",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human queue. Consequently, the process concluded with an escalation rather than a direct resolution."
+      },
+      {
+        "run_id": "run_000296",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human queue. The process concluded with the user being informed that a specialist would review their case."
+      },
+      {
+        "run_id": "run_000111",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human queue. The process concluded with the agent informing the user that their case required specialist review."
+      },
+      {
+        "run_id": "run_000468",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the `order_lookup` and `refund_policy_search` tools. Despite these positive findings, the agent unnecessarily escalated the request to a human support queue. Consequently, the process concluded with an escalation rather than an automated resolution."
+      },
+      {
+        "run_id": "run_000189",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy search tools. Despite the clear eligibility, the agent unnecessarily escalated the request to a human support queue. The process concluded with the case being sent for manual review rather than being resolved automatically."
+      },
+      {
+        "run_id": "run_000105",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the `order_lookup` and `refund_policy_search` tools. Despite the clear eligibility, the agent unnecessarily escalated the request to a human support queue. The process concluded with the user being notified of the escalation, resulting in an inefficient resolution."
+      },
+      {
+        "run_id": "run_000088",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human specialist. The process concluded with the customer being notified that their request is under manual review."
+      },
+      {
+        "run_id": "run_000003",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy tools. Despite the clear eligibility, the agent unnecessarily escalated the request to a human queue. The process concluded with the user being informed that a specialist would review their case."
+      },
+      {
+        "run_id": "run_000481",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human queue. The process concluded with the agent informing the customer that their case required specialist review."
+      },
+      {
+        "run_id": "run_000066",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for an unused item within the eligible 30-day window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human representative. The process concluded with the user being informed that a specialist would review their case."
+      },
+      {
+        "run_id": "run_000096",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools. Despite the clear match for an automated refund, the agent unnecessarily escalated the request to a human specialist. Consequently, the process concluded with an escalation rather than an immediate resolution."
+      },
+      {
+        "run_id": "run_000016",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for an unused item within the eligible 30-day window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools. Despite the request meeting all criteria for an automated refund, the agent unnecessarily escalated the case to a human representative. The process concluded with the user being informed that a specialist would review their request."
+      },
+      {
+        "run_id": "run_000321",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for an unused item within the eligible 30-day window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human support queue. The process concluded with the user being notified of the manual review."
+      },
+      {
+        "run_id": "run_000493",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for an unused item within the eligible 30-day window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy search tools. Despite the request meeting all criteria for an automated refund, the agent unnecessarily escalated the case to a human queue. The process concluded with the user being notified of the escalation."
+      },
+      {
+        "run_id": "run_000242",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. Although the agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools, it unnecessarily escalated the request to a human agent. The process concluded with the customer being notified of an escalation, resulting in an inefficient outcome despite clear policy alignment."
+      },
+      {
+        "run_id": "run_000158",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for an unused item within the eligible 30-day window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human representative. The process concluded with the customer being notified of the escalation."
+      },
+      {
+        "run_id": "run_000186",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy search tools. However, the agent unnecessarily escalated the request to a human support queue instead of processing the refund directly. Consequently, the case remains unresolved and requires manual intervention."
+      },
+      {
+        "run_id": "run_000220",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible return window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human representative. Consequently, the process concluded with an escalation rather than a direct resolution."
+      },
+      {
+        "run_id": "run_000335",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for an order delivered 18 days ago, which fell within the 30-day eligibility window. The agent successfully verified the order and confirmed policy compliance using the lookup and policy search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human representative. The process concluded with the customer being informed that a specialist would review their case."
+      },
+      {
+        "run_id": "run_000483",
+        "case_type": "refund_request",
+        "eval_result": "unnecessary_escalation",
+        "outcome": "escalated",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search",
+          "escalation_service"
+        ],
+        "summary": "The user requested a refund for a sealed item within the eligible 30-day return window. Although the agent successfully verified the order status and confirmed policy eligibility using the lookup and search tools, it unnecessarily escalated the request to a human agent. Consequently, the process concluded with an escalation rather than an automated resolution, resulting in an inefficient outcome."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Unnecessary Escalation of Eligible Automated Refunds",
+      "root_cause": "The agent's decision-making logic fails to trigger the automated refund execution tool despite successfully verifying all eligibility criteria (order status and policy compliance). The agent defaults to human escalation instead of proceeding with the final action.",
+      "business_impact": "Increased operational costs due to unnecessary manual support tickets and decreased customer satisfaction caused by delayed resolution of straightforward, policy-compliant requests.",
+      "suggested_fix": "Update the agent's system prompt or decision-tree logic to explicitly mandate the use of the refund execution tool when policy verification returns a positive result. Implement a guardrail to prevent escalation if all automated criteria are met."
+    }
+  },
+  {
+    "cluster_id": 4,
+    "size": 94,
+    "eval_result_counts": {
+      "missing_tool_call": 80,
+      "correct_resolution": 14
+    },
+    "case_type_counts": {
+      "shipping_status": 94
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000229",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900229. The agent successfully retrieved the order summary and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the available tracking ID to provide a specific delivery date, resulting in a vague estimate. The process concluded unsuccessfully due to a missing tool call to the carrier's tracking system."
+      },
+      {
+        "run_id": "run_000195",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900195. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent provided a generic estimate instead of utilizing a tracking tool to retrieve the specific delivery date. Consequently, the final response lacked the precise information required to resolve the user's inquiry."
+      },
+      {
+        "run_id": "run_000061",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900061. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the available tracking tool to provide a specific delivery date, instead relying on a generic estimate. Consequently, the final response lacked the precise information required to resolve the user's inquiry."
+      },
+      {
+        "run_id": "run_000167",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900167. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the specific tracking tool required to provide a precise delivery date. Consequently, the final response relied on a generic estimate rather than the actual tracking data."
+      },
+      {
+        "run_id": "run_000456",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the delivery status for order ORD-900456. The agent successfully retrieved the order status and general shipping timelines using the `order_lookup` and `knowledge_base_search` tools. However, the execution failed because the agent did not utilize the available tracking ID to provide a specific delivery date, resulting in a generic estimate. The process concluded without human intervention but failed to meet the requirement for precise tracking information."
+      },
+      {
+        "run_id": "run_000043",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900043. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines, but failed to utilize a tracking tool to provide a specific delivery date. Consequently, the agent provided an estimated arrival time based on general policy rather than real-time tracking data, resulting in a failed outcome due to a missing tool call."
+      },
+      {
+        "run_id": "run_000171",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the delivery status of order ORD-900171. The agent successfully retrieved the order summary and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the specific tracking tool required to provide an accurate, real-time delivery date. Consequently, the final response provided only a generic estimate rather than the precise status requested."
+      },
+      {
+        "run_id": "run_000032",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900032. The agent successfully retrieved the order status and general shipping timelines using the `order_lookup` and `knowledge_base_search` tools. However, the execution failed because the agent did not utilize the available tracking tool to provide a specific delivery date. Consequently, the final response provided only a generic estimate rather than the precise tracking information requested."
+      },
+      {
+        "run_id": "run_000018",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900018. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the available tracking ID to provide a specific delivery date, resulting in an imprecise final response."
+      },
+      {
+        "run_id": "run_000446",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the delivery status for order ORD-900446. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the specific tracking tool required to provide an accurate delivery date, resulting in a generic estimate."
+      },
+      {
+        "run_id": "run_000342",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900342. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the available tracking ID to provide a specific delivery date, resulting in a generic estimate."
+      },
+      {
+        "run_id": "run_000118",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a status update for order ORD-900118 due to a lack of tracking progress. The agent successfully retrieved the order status and consulted the knowledge base for delivery timelines. However, the execution failed because the agent did not utilize the available tracking tool to provide specific shipment details. Consequently, the final response provided only a generic estimate rather than the requested tracking update."
+      },
+      {
+        "run_id": "run_000465",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery date for order ORD-900465, prompting the agent to retrieve order status and general shipping policy information. Although the agent successfully accessed the order summary and knowledge base, it failed to utilize a tracking tool to provide a specific delivery date. Consequently, the agent provided a generic estimate rather than the precise status requested, resulting in a failed outcome due to a missing tool call."
+      },
+      {
+        "run_id": "run_000391",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900391. The agent successfully retrieved the order status and general shipping timelines using the `order_lookup` and `knowledge_base_search` tools. However, the execution failed because the agent did not utilize the available tracking tool to provide a specific delivery date. Consequently, the final response provided only a vague estimate rather than the precise information requested."
+      },
+      {
+        "run_id": "run_000001",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery date for order ORD-900001, prompting the agent to retrieve order status and general shipping policy information. Although the agent successfully identified the order and referenced the knowledge base, it failed to query the specific tracking API to provide an accurate delivery date. Consequently, the agent provided a generic estimate rather than the actual status, resulting in a failed outcome due to a missing tool call."
+      },
+      {
+        "run_id": "run_000031",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900031. The agent successfully retrieved the order summary and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the available tracking ID to provide a specific delivery date, resulting in a generic response."
+      },
+      {
+        "run_id": "run_000249",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery date for order ORD-900249, prompting the agent to retrieve order status and general shipping timelines. Although the agent successfully accessed the order details and knowledge base, it failed to utilize a tracking tool to provide a specific delivery date. Consequently, the agent provided a generic estimate rather than the precise information requested, resulting in a failed outcome due to a missing tool call."
+      },
+      {
+        "run_id": "run_000199",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the status of order ORD-900199 due to a lack of tracking updates. The agent successfully retrieved the order summary and consulted the knowledge base for delivery timelines. However, the execution failed because the agent did not utilize the available tracking tool to provide the specific shipment location. Consequently, the final response provided only a generic estimate rather than the requested tracking details."
+      },
+      {
+        "run_id": "run_000046",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the status of order ORD-900046 due to a lack of tracking updates. The agent successfully retrieved the order summary and consulted the knowledge base regarding standard delivery timelines. However, the execution failed because the agent provided a general delivery estimate instead of utilizing the available tracking ID to provide a specific status update. Consequently, the request remained unresolved despite the successful tool invocations."
+      },
+      {
+        "run_id": "run_000080",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested a delivery status update for order ORD-900080. The agent successfully retrieved the order summary and consulted the knowledge base for general shipping timelines. However, the execution failed because the agent did not utilize the available tracking ID to provide a specific delivery date, resulting in a generic response."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Failure to Invoke Tracking Tool",
+      "root_cause": "The agent consistently prioritizes general knowledge base lookups and order summaries over the execution of the specific tracking API tool, despite having the necessary tracking ID available in the context.",
+      "business_impact": "High volume of customer dissatisfaction due to vague, generic delivery estimates instead of accurate, real-time shipment status updates, leading to increased support escalations.",
+      "suggested_fix": "Update the agent's system prompt or tool-use policy to explicitly mandate the use of the tracking tool when a tracking ID is present in the order metadata, and implement a guardrail that prevents the agent from finalizing a response if the tracking tool has not been queried for delivery status inquiries."
+    }
+  },
+  {
+    "cluster_id": 2,
+    "size": 77,
+    "eval_result_counts": {
+      "correct_resolution": 17,
+      "retry_loop": 60
+    },
+    "case_type_counts": {
+      "account_login": 77
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000027",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent correctly identified the account lock but repeatedly attempted the same password reset tool five times despite consistent failure reports. This repetitive execution loop failed to resolve the underlying issue or escalate the case for human intervention. The interaction concluded unsuccessfully with the agent unable to restore account access."
+      },
+      {
+        "run_id": "run_000484",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent identified the account lock but repeatedly attempted the same `password_reset` tool five times despite consistent failure reports from the user. This repetitive execution failed to resolve the issue or escalate the case to human support. The session concluded unsuccessfully due to an ineffective retry loop."
+      },
+      {
+        "run_id": "run_000084",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent correctly identified the account lock but repeatedly attempted the same password reset tool four times despite consistent failure reports from the user. This repetitive execution loop failed to resolve the underlying issue or escalate the case for human intervention. The session concluded unsuccessfully without restoring account access."
+      },
+      {
+        "run_id": "run_000478",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent identified the account lock but repeatedly triggered the `password_reset` tool six times despite consistent failure reports from the user. This repetitive loop failed to resolve the underlying issue or escalate the case for human intervention. The session concluded unsuccessfully with the account remaining inaccessible."
+      },
+      {
+        "run_id": "run_000103",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their account. The agent correctly identified a login lock via the `account_lookup` tool but failed to address the underlying issue, instead repeatedly triggering the `password_reset` tool five times. This ineffective retry loop resulted in a poor user experience and an unresolved outcome. The session concluded without escalating the issue or attempting alternative troubleshooting steps."
+      },
+      {
+        "run_id": "run_000370",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance regaining access to their account after failed password reset attempts. The agent identified a login lock but repeatedly utilized the `password_reset` tool four times despite consistent failure reports from the user. This repetitive execution failed to resolve the underlying account lock, resulting in an unsuccessful outcome. The agent failed to escalate the issue or investigate the lock status beyond the initial lookup."
+      },
+      {
+        "run_id": "run_000094",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent correctly identified the account lock status but repeatedly attempted the same password reset tool five times despite consistent failure reports from the user. This repetitive execution loop failed to resolve the underlying issue or escalate the case. The session concluded unsuccessfully without restoring account access."
+      },
+      {
+        "run_id": "run_000029",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent correctly identified the account lock but entered an ineffective retry loop, repeatedly triggering the `password_reset` tool five times despite consistent failure. This repetitive approach failed to resolve the underlying issue or escalate the case. The interaction concluded unsuccessfully with the agent unable to restore account access."
+      },
+      {
+        "run_id": "run_000202",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their account. The agent identified a login lock but repeatedly attempted the same password reset tool five times despite consistent failure reports from the user. This repetitive execution resulted in a stuck loop without resolving the underlying account lock. The session ultimately concluded as a failure, requiring further intervention."
+      },
+      {
+        "run_id": "run_000233",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance regaining access to their account after failed password reset attempts. The agent identified a login lock but repeatedly triggered the `password_reset` tool four times despite the customer reporting continued failure. This repetitive execution resulted in a loop without resolving the underlying account lock. The process ultimately failed to restore access, necessitating human intervention."
+      },
+      {
+        "run_id": "run_000251",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their account. The agent correctly identified a login lock via the `account_lookup` tool but failed to address the underlying issue, instead repeatedly triggering the `password_reset` tool six times. This repetitive loop proved ineffective, resulting in a failure to resolve the user's access problem. The session concluded without a successful recovery or escalation to human support."
+      },
+      {
+        "run_id": "run_000014",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent successfully identified the account lock but entered an ineffective retry loop, repeatedly triggering the `password_reset` tool six times despite consistent failure reports. The execution failed to resolve the issue, as the agent lacked the logic to escalate the problem or address the underlying account lock."
+      },
+      {
+        "run_id": "run_000020",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent correctly identified the account lock status but repeatedly attempted the same password reset tool five times despite consistent failure reports from the user. This repetitive execution indicates a failure to escalate or troubleshoot the underlying technical issue. The session concluded unsuccessfully without resolving the user's login problem."
+      },
+      {
+        "run_id": "run_000278",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent correctly identified the account lock status but repeatedly attempted the same password reset tool six times despite consistent failure reports from the user. This repetitive loop failed to resolve the underlying issue, resulting in an unsuccessful outcome. The session concluded without escalating the problem or addressing the account lock directly."
+      },
+      {
+        "run_id": "run_000151",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance regaining access to their account after failed password reset attempts. The agent correctly identified a login lock via the `account_lookup` tool but failed to resolve the issue by repeatedly triggering the `password_reset` tool six times without success. This repetitive execution loop failed to address the underlying account lock, resulting in an unsuccessful outcome for the customer."
+      },
+      {
+        "run_id": "run_000240",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance regaining access to their account after failed password reset attempts. The agent correctly identified a login lock but repeatedly triggered the password reset tool four times despite consistent failure. This repetitive execution failed to resolve the underlying issue or escalate the case for human intervention. The session concluded unsuccessfully with the account remaining inaccessible."
+      },
+      {
+        "run_id": "run_000120",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance regaining access to their account after failed password reset attempts. The agent correctly identified a login lock via the `account_lookup` tool but entered an ineffective loop, repeatedly triggering the `password_reset` tool six times despite consistent failure reports. This repetitive execution failed to resolve the underlying issue or escalate the case to human support. The session concluded unsuccessfully with the user still unable to access their account."
+      },
+      {
+        "run_id": "run_000438",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance regaining access to their account after failed password reset attempts. The agent identified a login lock but repeatedly triggered the password reset tool four times despite the user reporting persistent link failures. This repetitive loop failed to resolve the underlying issue or escalate the case for manual intervention. The session concluded unsuccessfully with the account remaining inaccessible."
+      },
+      {
+        "run_id": "run_000172",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their account. The agent identified a login lock but repeatedly attempted the same password reset tool four times despite consistent failure reports from the user. This repetitive execution resulted in a loop that failed to resolve the underlying account access issue. The session concluded unsuccessfully without escalating to human support or investigating the cause of the link failure."
+      },
+      {
+        "run_id": "run_000371",
+        "case_type": "account_login",
+        "eval_result": "retry_loop",
+        "outcome": "failed",
+        "tools_used": [
+          "account_lookup",
+          "password_reset"
+        ],
+        "summary": "The user requested assistance with a failing password reset link for their locked account. The agent correctly identified the account status but entered an ineffective retry loop, repeatedly triggering the `password_reset` tool six times despite consistent failure reports. This repetitive behavior failed to resolve the underlying issue or escalate the case for manual intervention. Consequently, the execution ended in a failure to restore account access."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Infinite Retry Loop on Account Lock Resolution",
+      "root_cause": "The agent lacks conditional logic to detect persistent tool failure and fails to implement a circuit breaker or escalation path when the 'password_reset' tool returns consistent errors for locked accounts.",
+      "business_impact": "High customer frustration due to unresolved account access issues, increased support ticket volume as users are forced to seek human intervention after failed automated attempts, and inefficient consumption of API/compute resources.",
+      "suggested_fix": "Implement a state-based retry limit (e.g., max 2 attempts) and a mandatory escalation trigger to human support if the 'password_reset' tool returns a failure status or if the account lock status persists after initial attempts."
+    }
+  },
+  {
+    "cluster_id": 0,
+    "size": 31,
+    "eval_result_counts": {
+      "timeout": 8,
+      "correct_resolution": 15,
+      "low_confidence": 8
+    },
+    "case_type_counts": {
+      "exchange_request": 3,
+      "order_cancellation": 17,
+      "payment_issue": 3,
+      "account_login": 2,
+      "damaged_item": 1,
+      "shipping_status": 4,
+      "refund_request": 1
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000452",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900452, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. No errors occurred during the process, and the agent provided a clear, accurate confirmation to the user. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000179",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900179, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. No errors occurred during the process, and the agent provided a clear, accurate confirmation to the user. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000355",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900355, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to verify that the order was still processing and eligible for cancellation. No errors occurred during the process, and the agent provided a clear confirmation to the user. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000062",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900062 contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. No errors occurred during the process, and the agent provided a clear, accurate confirmation to the user. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000303",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900303, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. No errors occurred during the process, and the agent provided a clear, accurate confirmation to the user. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000316",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900316, contingent on its shipping status. The agent successfully verified the order's processing status using the `order_lookup` tool and confirmed eligibility via the `knowledge_base_search` tool. No errors occurred during execution, and the agent correctly informed the user that the cancellation could proceed. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000085",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900085, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. No errors occurred during the process, and the agent correctly informed the user that the cancellation could proceed. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000389",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900389 contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to verify that the order was still processing and eligible for cancellation. No errors occurred during the process, and the agent provided a clear confirmation to the user. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000500",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900500, contingent on its shipping status. The agent utilized the `order_lookup` and `knowledge_base_search` tools to verify that the order was still processing and eligible for cancellation. After confirming the policy, the agent successfully informed the user that the cancellation could proceed. The request was resolved efficiently without errors or the need for human intervention."
+      },
+      {
+        "run_id": "run_000279",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900279, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. No errors occurred during the process, and the agent provided a clear, accurate resolution to the customer."
+      },
+      {
+        "run_id": "run_000219",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900219, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. After verifying the policy, the agent informed the user that the cancellation could proceed. The request was resolved correctly without errors or the need for human intervention."
+      },
+      {
+        "run_id": "run_000286",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900286, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. After verifying these conditions, the agent informed the user that the cancellation path was confirmed. The request was resolved correctly without errors or the need for human intervention."
+      },
+      {
+        "run_id": "run_000373",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900373, contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. The agent correctly identified the eligibility criteria and informed the user that the cancellation process could proceed. The request was resolved efficiently without errors or the need for human intervention."
+      },
+      {
+        "run_id": "run_000356",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900356, contingent on its shipment status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to confirm the order was still processing and eligible for cancellation. The agent correctly identified the eligibility criteria and communicated the cancellation path to the user, resulting in a successful resolution."
+      },
+      {
+        "run_id": "run_000492",
+        "case_type": "order_cancellation",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested the cancellation of order ORD-900492 contingent on its shipping status. The agent successfully utilized the `order_lookup` and `knowledge_base_search` tools to verify that the order was still processing and eligible for cancellation. After confirming the policy, the agent informed the user that the cancellation path was available. The request was resolved correctly without errors or the need for human intervention."
+      },
+      {
+        "run_id": "run_000450",
+        "case_type": "shipping_status",
+        "eval_result": "low_confidence",
+        "outcome": "awaiting_customer",
+        "tools_used": [
+          "account_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested verification of the shipping address associated with order ORD-900450. The agent utilized `account_lookup` and `knowledge_base_search` but encountered ambiguous account data and conflicting internal documentation. Consequently, the agent failed to resolve the query and provided a low-confidence response, resulting in an outcome of awaiting further customer input."
+      },
+      {
+        "run_id": "run_000072",
+        "case_type": "payment_issue",
+        "eval_result": "low_confidence",
+        "outcome": "awaiting_customer",
+        "tools_used": [
+          "account_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested verification of the shipping address associated with order ORD-900072. The agent utilized `account_lookup` and `knowledge_base_search` but encountered ambiguous account data and conflicting internal documentation. Consequently, the agent failed to resolve the query and provided a low-confidence response, resulting in the case being set to an awaiting-customer status."
+      },
+      {
+        "run_id": "run_000253",
+        "case_type": "shipping_status",
+        "eval_result": "low_confidence",
+        "outcome": "awaiting_customer",
+        "tools_used": [
+          "account_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested verification of the shipping address associated with order ORD-900253. The agent utilized `account_lookup` and `knowledge_base_search` but encountered ambiguous account data and conflicting internal documentation. Consequently, the agent failed to resolve the query and provided a low-confidence response, resulting in an `awaiting_customer` outcome."
+      },
+      {
+        "run_id": "run_000489",
+        "case_type": "account_login",
+        "eval_result": "low_confidence",
+        "outcome": "awaiting_customer",
+        "tools_used": [
+          "account_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested verification of the shipping address associated with order ORD-900489. The agent utilized `account_lookup` and `knowledge_base_search` but encountered ambiguous account history and conflicting internal documentation. Consequently, the agent failed to resolve the query and provided a low-confidence response, resulting in an \"awaiting_customer\" outcome."
+      },
+      {
+        "run_id": "run_000395",
+        "case_type": "shipping_status",
+        "eval_result": "low_confidence",
+        "outcome": "awaiting_customer",
+        "tools_used": [
+          "account_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested verification of the shipping address associated with order ORD-900395. The agent utilized `account_lookup` and `knowledge_base_search` but encountered ambiguous account data and conflicting internal documentation. Consequently, the agent failed to resolve the query and provided a low-confidence response, resulting in an \"awaiting_customer\" outcome."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Shipping Address Verification Failures",
+      "root_cause": "The agent encounters ambiguous account data and conflicting internal documentation when attempting to verify shipping addresses, preventing it from reaching a definitive conclusion.",
+      "business_impact": "Increased customer friction and operational overhead due to unresolved queries requiring manual intervention or further customer input.",
+      "suggested_fix": "Audit and clean the account data schema to resolve inconsistencies, and update the knowledge base documentation to provide clear, non-conflicting guidance for address verification edge cases."
+    }
+  },
+  {
+    "cluster_id": 5,
+    "size": 28,
+    "eval_result_counts": {
+      "hallucinated_response": 10,
+      "correct_resolution": 18
+    },
+    "case_type_counts": {
+      "product_information": 23,
+      "damaged_item": 5
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000439",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved the specific warranty duration and scope by querying the product catalog and knowledge base. No errors occurred during the process, and the agent provided a clear, accurate response confirming a one-year limited warranty for manufacturing defects. The interaction was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000262",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, and the agent provided a direct, accurate response to the user. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000212",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, and the agent provided a direct, accurate response to the customer. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000170",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, and the agent provided a direct, accurate response to the customer. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000126",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, and the agent provided a concise, accurate final response. The request was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000087",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved product details and specific warranty terms by querying the product catalog and knowledge base. No errors occurred during the process, and the agent provided a clear, accurate response confirming a one-year limited warranty for manufacturing defects. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000155",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved the warranty duration and scope by querying the product catalog and knowledge base. No errors occurred during the process, and the agent provided a clear, accurate response confirming a one-year limited warranty for manufacturing defects. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000138",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved product details and specific warranty terms by querying the product catalog and knowledge base. No errors occurred during the process, and the agent provided a clear, accurate confirmation of the one-year limited warranty. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000070",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, leading to a prompt and accurate resolution for the customer."
+      },
+      {
+        "run_id": "run_000200",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the FlexGrip phone case. The agent successfully retrieved product details and specific warranty terms by querying the product catalog and knowledge base. No errors occurred during the process, leading to a prompt and accurate resolution confirming a one-year limited warranty for manufacturing defects."
+      },
+      {
+        "run_id": "run_000386",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the LumaGlow desk lamp. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, and the agent provided a concise, accurate final response. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000332",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the LumaGlow desk lamp. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, and the agent provided a direct, accurate answer. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000218",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the LumaGlow desk lamp. The agent successfully retrieved the warranty duration and scope by querying the product catalog and knowledge base. No errors occurred during the process, and the agent provided a clear, accurate response confirming a one-year limited warranty for manufacturing defects. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000083",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the CloudRest pillow. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, and the agent provided a direct, accurate response to the customer. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000110",
+        "case_type": "product_information",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "product_catalog",
+          "knowledge_base_search"
+        ],
+        "summary": "The user inquired about the warranty coverage for the CloudRest pillow. The agent successfully retrieved the warranty duration from the product catalog and clarified the scope of coverage using the knowledge base. No errors occurred during the process, and the agent provided a direct, accurate response to the customer. The request was resolved efficiently in a single turn."
+      },
+      {
+        "run_id": "run_000248",
+        "case_type": "product_information",
+        "eval_result": "hallucinated_response",
+        "outcome": "failed",
+        "tools_used": [
+          "product_catalog"
+        ],
+        "summary": "The user inquired about same-day replacement coverage for the LumaGlow desk lamp. Although the `product_catalog` tool returned no information regarding expedited replacement, the agent ignored this result and incorrectly confirmed that the coverage exists. This led to a hallucinated response that directly contradicted the retrieved data. Consequently, the interaction is marked as a failure due to the agent's inability to accurately report the lack of available information."
+      },
+      {
+        "run_id": "run_000449",
+        "case_type": "damaged_item",
+        "eval_result": "hallucinated_response",
+        "outcome": "failed",
+        "tools_used": [
+          "product_catalog"
+        ],
+        "summary": "The user inquired about same-day replacement coverage for the LumaGlow desk lamp. Although the product catalog search returned no information regarding expedited replacement, the agent incorrectly confirmed that the service is included. This resulted in a hallucinated response that directly contradicted the retrieved data. The execution failed due to the agent providing inaccurate information to the customer."
+      },
+      {
+        "run_id": "run_000026",
+        "case_type": "product_information",
+        "eval_result": "hallucinated_response",
+        "outcome": "failed",
+        "tools_used": [
+          "product_catalog"
+        ],
+        "summary": "The user inquired about same-day replacement coverage for the LumaGlow desk lamp. Although the `product_catalog` tool returned no information regarding expedited replacement, the agent ignored this result and provided a false confirmation to the user. This execution resulted in a hallucinated response, failing to accurately address the customer's query based on available data."
+      },
+      {
+        "run_id": "run_000254",
+        "case_type": "damaged_item",
+        "eval_result": "hallucinated_response",
+        "outcome": "failed",
+        "tools_used": [
+          "product_catalog"
+        ],
+        "summary": "The user inquired about same-day replacement coverage for a FrostLite water bottle. The agent queried the product catalog, which returned no information regarding expedited replacement services. Despite the lack of supporting data, the agent hallucinated a positive confirmation of coverage. Consequently, the interaction resulted in a failed outcome due to the provision of inaccurate information."
+      },
+      {
+        "run_id": "run_000204",
+        "case_type": "damaged_item",
+        "eval_result": "hallucinated_response",
+        "outcome": "failed",
+        "tools_used": [
+          "product_catalog"
+        ],
+        "summary": "The user inquired about same-day replacement coverage for a CloudRest pillow. The agent queried the product catalog, which returned no information regarding expedited replacement services. Despite this lack of evidence, the agent hallucinated a positive confirmation in its final response. Consequently, the interaction resulted in a failed outcome due to the provision of inaccurate information."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Warranty and Service Policy Hallucinations",
+      "root_cause": "The agent fails to handle null or empty results from the product_catalog tool when querying for non-existent services (e.g., same-day replacement). Instead of reporting that the information is unavailable, the agent defaults to a positive confirmation, indicating a lack of grounding in the tool's output.",
+      "business_impact": "High risk of customer dissatisfaction and potential liability due to the dissemination of false service promises and incorrect policy information.",
+      "suggested_fix": "Implement a strict validation layer in the agent's response generation logic that requires explicit confirmation from the tool output before making a claim. If the tool returns no data, the agent must be instructed to state that the service is not offered or that information is unavailable, rather than assuming a default positive state."
+    }
+  },
+  {
+    "cluster_id": 6,
+    "size": 25,
+    "eval_result_counts": {
+      "correct_resolution": 25
+    },
+    "case_type_counts": {
+      "exchange_request": 25
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000399",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a phone case, prompting the agent to verify the order status and applicable return policies. The agent successfully confirmed the order was delivered within the 30-day eligibility window using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a clear, correct resolution to the user."
+      },
+      {
+        "run_id": "run_000086",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a phone case, prompting the agent to verify the order status and applicable return policies. The agent successfully confirmed that the order was within the 30-day eligibility window using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a clear, accurate resolution to the customer."
+      },
+      {
+        "run_id": "run_000441",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a phone case, prompting the agent to verify the order status and applicable return policy. The agent successfully confirmed the order was delivered within the 30-day eligibility window using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a clear, accurate resolution to the customer."
+      },
+      {
+        "run_id": "run_000472",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a phone case, prompting the agent to verify the order status and applicable return policies. The agent successfully confirmed that the order was within the 30-day exchange window using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a clear, accurate resolution to the customer."
+      },
+      {
+        "run_id": "run_000255",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a water bottle, prompting the agent to verify the order status and applicable return policies. Using the `order_lookup` and `refund_policy_search` tools, the agent confirmed the item was delivered six days ago and remained within the 30-day exchange window. The agent successfully communicated this eligibility to the user, resulting in a resolved case without the need for human intervention."
+      },
+      {
+        "run_id": "run_000021",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a FrostLite water bottle, prompting the agent to verify the order status and applicable return policies. Using the `order_lookup` and `refund_policy_search` tools, the agent confirmed the purchase was within the 30-day eligibility window. No errors occurred during the process, and the agent successfully resolved the request by informing the user of their eligibility for an exchange."
+      },
+      {
+        "run_id": "run_000037",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a FrostLite water bottle due to a sizing issue. The agent successfully verified the order status and confirmed eligibility under the 30-day exchange policy using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a clear, accurate resolution to the customer."
+      },
+      {
+        "run_id": "run_000445",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a desk lamp, prompting the agent to verify order eligibility and company policy. Using the `order_lookup` and `refund_policy_search` tools, the agent confirmed the item was delivered within the 30-day exchange window. The agent successfully resolved the request by informing the user that the exchange is permitted. No errors occurred during the process."
+      },
+      {
+        "run_id": "run_000414",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a FrostLite water bottle, prompting the agent to verify the order status and applicable return policies. The agent successfully confirmed that the order was delivered within the 30-day eligibility window using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a clear, accurate resolution to the customer."
+      },
+      {
+        "run_id": "run_000304",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a FrostLite water bottle due to a sizing issue. The agent successfully verified the order status and confirmed eligibility under the 30-day exchange policy using the lookup and policy search tools. The process concluded efficiently with the agent informing the customer that the exchange is permitted, resulting in a resolved outcome."
+      },
+      {
+        "run_id": "run_000053",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a FrostLite water bottle due to a sizing issue. The agent successfully verified the order status and confirmed eligibility under the 30-day exchange policy using the lookup and policy search tools. The process concluded efficiently with the agent informing the customer that their exchange request is valid."
+      },
+      {
+        "run_id": "run_000347",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a FrostLite water bottle, prompting the agent to verify the order status and applicable return policies. Using the `order_lookup` and `refund_policy_search` tools, the agent confirmed the purchase was within the 30-day eligibility window. The agent successfully resolved the request by informing the user that they are eligible for the size exchange."
+      },
+      {
+        "run_id": "run_000010",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for an AeroBrew coffee maker, prompting the agent to verify the order status and applicable return policies. The agent successfully confirmed the order was delivered within the 30-day eligibility window using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a correct resolution confirming the user's eligibility for an exchange."
+      },
+      {
+        "run_id": "run_000464",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for their SoundPeak earbuds due to a sizing issue. The agent successfully verified the order status and confirmed eligibility using the `order_lookup` and `refund_policy_search` tools. Finding the request within the 30-day policy window, the agent correctly informed the customer that the exchange could proceed. The case was resolved efficiently without errors or the need for human intervention."
+      },
+      {
+        "run_id": "run_000203",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a LumaGlow desk lamp, prompting the agent to verify the order status and applicable return policies. The agent successfully confirmed the order was delivered within the 30-day eligibility window using the `order_lookup` and `refund_policy_search` tools. No errors occurred during the process, and the agent provided a clear, accurate resolution to the customer."
+      },
+      {
+        "run_id": "run_000374",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for their SoundPeak earbuds due to a sizing issue. The agent successfully verified the order status and confirmed eligibility using the order lookup and refund policy tools. No errors occurred during the process, and the agent correctly informed the user that their request fell within the 30-day exchange window. The interaction was resolved efficiently without the need for human intervention."
+      },
+      {
+        "run_id": "run_000173",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a CloudRest pillow, prompting the agent to verify the order status and applicable exchange policies. Using the `order_lookup` and `refund_policy_search` tools, the agent confirmed the item was delivered six days ago and remained within the 30-day eligibility window. The agent successfully resolved the request by informing the user that an exchange for a different size is permitted."
+      },
+      {
+        "run_id": "run_000461",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a CloudRest pillow, prompting the agent to verify the order status and applicable return policies. Using the `order_lookup` and `refund_policy_search` tools, the agent confirmed the item was delivered 6 days ago and remained within the 30-day exchange window. The agent successfully resolved the request by informing the user that the exchange is permitted."
+      },
+      {
+        "run_id": "run_000266",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for their SoundPeak earbuds due to a sizing issue. The agent successfully verified the order status and confirmed eligibility under the 30-day exchange policy using the order lookup and policy search tools. The process concluded with a correct resolution, informing the user that their request is within the allowed exchange window."
+      },
+      {
+        "run_id": "run_000102",
+        "case_type": "exchange_request",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "refund_policy_search"
+        ],
+        "summary": "The user requested an exchange for a pair of TrailMax running shoes. The agent successfully verified the order status and confirmed eligibility under the 30-day exchange policy using the lookup and policy search tools. No errors occurred during the process, and the agent provided a clear, correct resolution to the customer."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Successful Automated Exchange Processing",
+      "root_cause": "The agent successfully utilized the 'order_lookup' and 'refund_policy_search' tools to validate customer eligibility against the 30-day exchange policy, resulting in consistent, error-free resolutions.",
+      "business_impact": "High operational efficiency; these interactions demonstrate successful automation of routine exchange requests, reducing support ticket volume and human intervention requirements.",
+      "suggested_fix": "No fix required. This cluster represents optimal agent performance. Monitor for any deviations in tool latency or policy updates that might impact future success rates."
+    }
+  },
+  {
+    "cluster_id": 7,
+    "size": 24,
+    "eval_result_counts": {
+      "correct_resolution": 24
+    },
+    "case_type_counts": {
+      "payment_issue": 24
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000157",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a potential double charge for order ORD-900157. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would drop automatically, successfully resolving the issue without human intervention."
+      },
+      {
+        "run_id": "run_000130",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900130. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would automatically drop, successfully resolving the issue without human intervention."
+      },
+      {
+        "run_id": "run_000284",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a potential double charge for order ORD-900284. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would drop automatically, successfully resolving the issue without human intervention."
+      },
+      {
+        "run_id": "run_000194",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900194. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would drop automatically, successfully resolving the issue without human intervention."
+      },
+      {
+        "run_id": "run_000314",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900314. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would drop automatically, successfully resolving the inquiry without human intervention."
+      },
+      {
+        "run_id": "run_000269",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a potential double charge for order ORD-900269. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. No errors occurred during the process, and the agent successfully resolved the issue by informing the user that the pending charge would automatically drop."
+      },
+      {
+        "run_id": "run_000098",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900098. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution timeline via the `knowledge_base_search` tool. The agent correctly informed the user that the pending charge would drop automatically, successfully resolving the issue without human intervention."
+      },
+      {
+        "run_id": "run_000211",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900211. The agent utilized the `order_lookup` tool to identify a single successful charge alongside a pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would automatically expire, successfully resolving the issue without human intervention."
+      },
+      {
+        "run_id": "run_000185",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested clarification regarding a suspected double charge for order ORD-900185. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would resolve automatically, successfully closing the inquiry without errors."
+      },
+      {
+        "run_id": "run_000252",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested assistance regarding a suspected double charge for order ORD-900252. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. No errors occurred during the process, and the agent successfully resolved the issue by explaining that the pending charge would automatically drop."
+      },
+      {
+        "run_id": "run_000297",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900297. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would resolve automatically, successfully closing the case without human intervention."
+      },
+      {
+        "run_id": "run_000497",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900497. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would resolve automatically, successfully closing the case without human intervention."
+      },
+      {
+        "run_id": "run_000165",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900165. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would automatically drop within 3-5 business days, successfully resolving the issue without human intervention."
+      },
+      {
+        "run_id": "run_000224",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900224. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would resolve automatically, successfully closing the case without human intervention."
+      },
+      {
+        "run_id": "run_000268",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900268. The agent utilized the `order_lookup` tool to identify a single successful charge alongside a pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. No errors occurred during the process, and the agent successfully resolved the issue by explaining that the pending charge would automatically expire."
+      },
+      {
+        "run_id": "run_000463",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900463. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard policy via `knowledge_base_search`. The agent correctly informed the user that the pending charge would resolve automatically, successfully closing the case without human intervention."
+      },
+      {
+        "run_id": "run_000366",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested assistance regarding a suspected double charge for order ORD-900366. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution policy via `knowledge_base_search`. No errors occurred during the process, and the agent successfully resolved the issue by explaining that the pending charge would automatically expire."
+      },
+      {
+        "run_id": "run_000012",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a potential double charge for order ORD-900012. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard resolution timeline via `knowledge_base_search`. The agent correctly informed the user that the pending charge would resolve automatically, successfully closing the case without human intervention."
+      },
+      {
+        "run_id": "run_000045",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a potential double charge for order ORD-900045. The agent utilized the `order_lookup` tool to identify one successful charge and one pending authorization, then confirmed the standard policy via `knowledge_base_search`. The agent correctly informed the user that the pending authorization would resolve automatically, successfully closing the inquiry without further intervention."
+      },
+      {
+        "run_id": "run_000333",
+        "case_type": "payment_issue",
+        "eval_result": "correct_resolution",
+        "outcome": "resolved",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user requested an investigation into a suspected double charge for order ORD-900333. The agent utilized the `order_lookup` tool to identify a single successful charge alongside a pending authorization, then confirmed the standard resolution timeline via the `knowledge_base_search` tool. The issue was successfully resolved by informing the customer that the pending charge would automatically expire."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Automated Resolution of Payment Authorization Inquiries",
+      "root_cause": "High volume of customer inquiries regarding standard payment authorization holds being misinterpreted as double charges.",
+      "business_impact": "High operational efficiency; the agent successfully handles repetitive, low-complexity billing inquiries without human intervention, reducing support ticket backlog.",
+      "suggested_fix": "Implement proactive customer communication (e.g., automated email or UI notification) at the time of checkout explaining that pending authorizations are temporary, which would reduce the volume of incoming support inquiries."
+    }
+  }
+]

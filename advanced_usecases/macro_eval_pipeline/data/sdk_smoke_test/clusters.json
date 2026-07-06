@@ -1,0 +1,31 @@
+[
+  {
+    "cluster_id": 0,
+    "size": 1,
+    "eval_result_counts": {
+      "missing_tool_call": 1
+    },
+    "case_type_counts": {
+      "shipping_status": 1
+    },
+    "representative_runs": [
+      {
+        "run_id": "run_000001",
+        "case_type": "shipping_status",
+        "eval_result": "missing_tool_call",
+        "outcome": "failed",
+        "tools_used": [
+          "order_lookup",
+          "knowledge_base_search"
+        ],
+        "summary": "The user asked for a specific delivery date for order ORD-900001. The agent used order_lookup to confirm the order was shipped and found a tracking ID, then used knowledge_base_search for general delivery timelines. Instead of using a tracking tool to get the precise date, it gave a generic estimate of 4 business days. This missed step led to an incomplete response, resulting in a failed outcome. The response did not fully address the user's request for the actual delivery date."
+      }
+    ],
+    "explanation": {
+      "cluster_name": "Incomplete Delivery Date Resolution",
+      "root_cause": "Agent failed to use a tracking tool to retrieve the precise delivery date after obtaining a tracking ID, relying instead on a generic estimate from knowledge base.",
+      "business_impact": "User request for specific delivery date was not fully addressed, leading to a failed outcome and potential customer dissatisfaction.",
+      "suggested_fix": "Modify agent workflow to automatically invoke a tracking tool (e.g., carrier API) when a tracking ID is available, and return the actual delivery date instead of a generic estimate."
+    }
+  }
+]

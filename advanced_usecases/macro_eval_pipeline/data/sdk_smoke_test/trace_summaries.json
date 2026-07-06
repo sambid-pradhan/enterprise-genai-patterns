@@ -1,0 +1,13 @@
+[
+  {
+    "run_id": "run_000001",
+    "case_type": "shipping_status",
+    "eval_result": "missing_tool_call",
+    "outcome": "failed",
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "summary": "The user asked for a specific delivery date for order ORD-900001. The agent used order_lookup to confirm the order was shipped and found a tracking ID, then used knowledge_base_search for general delivery timelines. Instead of using a tracking tool to get the precise date, it gave a generic estimate of 4 business days. This missed step led to an incomplete response, resulting in a failed outcome. The response did not fully address the user's request for the actual delivery date."
+  }
+]

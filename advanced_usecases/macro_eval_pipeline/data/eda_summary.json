@@ -1,0 +1,399 @@
+{
+  "total_traces": 500,
+  "unique_run_ids": 500,
+  "timestamp_min": "2026-06-01T09:15:42Z",
+  "timestamp_max": "2026-07-01T07:12:37Z",
+  "distributions": {
+    "case_type": [
+      {
+        "value": "refund_request",
+        "count": 158,
+        "pct": 31.6
+      },
+      {
+        "value": "shipping_status",
+        "count": 98,
+        "pct": 19.6
+      },
+      {
+        "value": "account_login",
+        "count": 79,
+        "pct": 15.8
+      },
+      {
+        "value": "damaged_item",
+        "count": 54,
+        "pct": 10.8
+      },
+      {
+        "value": "exchange_request",
+        "count": 44,
+        "pct": 8.8
+      },
+      {
+        "value": "payment_issue",
+        "count": 27,
+        "pct": 5.4
+      },
+      {
+        "value": "product_information",
+        "count": 23,
+        "pct": 4.6
+      },
+      {
+        "value": "order_cancellation",
+        "count": 17,
+        "pct": 3.4
+      }
+    ],
+    "eval_result": [
+      {
+        "value": "correct_resolution",
+        "count": 150,
+        "pct": 30.0
+      },
+      {
+        "value": "unnecessary_escalation",
+        "count": 120,
+        "pct": 24.0
+      },
+      {
+        "value": "missing_tool_call",
+        "count": 80,
+        "pct": 16.0
+      },
+      {
+        "value": "retry_loop",
+        "count": 60,
+        "pct": 12.0
+      },
+      {
+        "value": "wrong_policy_retrieval",
+        "count": 50,
+        "pct": 10.0
+      },
+      {
+        "value": "hallucinated_response",
+        "count": 10,
+        "pct": 2.0
+      },
+      {
+        "value": "timeout",
+        "count": 8,
+        "pct": 1.6
+      },
+      {
+        "value": "low_confidence",
+        "count": 8,
+        "pct": 1.6
+      },
+      {
+        "value": "successful_with_human_review",
+        "count": 7,
+        "pct": 1.4
+      },
+      {
+        "value": "incorrect_refund_decision",
+        "count": 7,
+        "pct": 1.4
+      }
+    ],
+    "outcome": [
+      {
+        "value": "failed",
+        "count": 215,
+        "pct": 43.0
+      },
+      {
+        "value": "resolved",
+        "count": 157,
+        "pct": 31.4
+      },
+      {
+        "value": "escalated",
+        "count": 120,
+        "pct": 24.0
+      },
+      {
+        "value": "awaiting_customer",
+        "count": 8,
+        "pct": 1.6
+      }
+    ],
+    "customer_tier": [
+      {
+        "value": "standard",
+        "count": 107,
+        "pct": 21.4
+      },
+      {
+        "value": "enterprise",
+        "count": 104,
+        "pct": 20.8
+      },
+      {
+        "value": "platinum",
+        "count": 97,
+        "pct": 19.4
+      },
+      {
+        "value": "gold",
+        "count": 96,
+        "pct": 19.2
+      },
+      {
+        "value": "silver",
+        "count": 96,
+        "pct": 19.2
+      }
+    ],
+    "region": [
+      {
+        "value": "SG",
+        "count": 85,
+        "pct": 17.0
+      },
+      {
+        "value": "EU",
+        "count": 79,
+        "pct": 15.8
+      },
+      {
+        "value": "US",
+        "count": 73,
+        "pct": 14.6
+      },
+      {
+        "value": "UK",
+        "count": 71,
+        "pct": 14.2
+      },
+      {
+        "value": "IN",
+        "count": 67,
+        "pct": 13.4
+      },
+      {
+        "value": "CA",
+        "count": 66,
+        "pct": 13.2
+      },
+      {
+        "value": "AU",
+        "count": 59,
+        "pct": 11.8
+      }
+    ]
+  },
+  "tool_counts": [
+    {
+      "tool": "order_lookup",
+      "count": 387,
+      "pct": 77.4
+    },
+    {
+      "tool": "refund_policy_search",
+      "count": 239,
+      "pct": 47.8
+    },
+    {
+      "tool": "knowledge_base_search",
+      "count": 153,
+      "pct": 30.6
+    },
+    {
+      "tool": "escalation_service",
+      "count": 127,
+      "pct": 25.4
+    },
+    {
+      "tool": "account_lookup",
+      "count": 85,
+      "pct": 17.0
+    },
+    {
+      "tool": "password_reset",
+      "count": 77,
+      "pct": 15.4
+    },
+    {
+      "tool": "refund_create",
+      "count": 44,
+      "pct": 8.8
+    },
+    {
+      "tool": "product_catalog",
+      "count": 28,
+      "pct": 5.6
+    },
+    {
+      "tool": "shipment_tracking",
+      "count": 14,
+      "pct": 2.8
+    }
+  ],
+  "numeric_stats": {
+    "latency_seconds": {
+      "min": 0.9,
+      "p50": 3.12,
+      "p75": 3.87,
+      "p90": 4.79,
+      "p95": 6.01,
+      "max": 14.71,
+      "mean": 3.2767
+    },
+    "cost_usd": {
+      "min": 0.0006,
+      "p50": 0.0012,
+      "p75": 0.0014,
+      "p90": 0.0021,
+      "p95": 0.0025,
+      "max": 0.0035,
+      "mean": 0.0013
+    },
+    "token_input": {
+      "min": 663,
+      "p50": 1502,
+      "p75": 1849,
+      "p90": 2046,
+      "p95": 2476,
+      "max": 3439,
+      "mean": 1520.012
+    },
+    "token_output": {
+      "min": 197,
+      "p50": 493,
+      "p75": 599,
+      "p90": 667,
+      "p95": 688,
+      "max": 852,
+      "mean": 484.73
+    },
+    "retry_count": {
+      "min": 0,
+      "p50": 0,
+      "p75": 0,
+      "p90": 4,
+      "p95": 5,
+      "max": 6,
+      "mean": 0.642
+    },
+    "steps_per_trace": {
+      "min": 1,
+      "p50": 2,
+      "p75": 3,
+      "p90": 5,
+      "p95": 6,
+      "max": 7,
+      "mean": 2.796
+    },
+    "tools_per_trace": {
+      "min": 1,
+      "p50": 2,
+      "p75": 3,
+      "p90": 3,
+      "p95": 3,
+      "max": 3,
+      "mean": 2.308
+    },
+    "total_cost_usd": 0.6587,
+    "total_tokens": 1002371
+  },
+  "quality_checks": {
+    "missing_fields": {},
+    "duplicate_run_ids": 0,
+    "invalid_tools": {},
+    "step_issue_count": 0,
+    "eval_outcome_issue_count": 0,
+    "semantic_issue_count": 0,
+    "resolved_human_next_step_count": 0
+  },
+  "notable_checks": {
+    "missing_tool_call_without_shipment_tracking": 80,
+    "retry_loop_min_retry_count": 4,
+    "retry_loop_max_retry_count": 6,
+    "unnecessary_escalation_with_escalation_service": 120,
+    "wrong_policy_with_refund_policy_search": 50
+  },
+  "representative_examples": [
+    {
+      "run_id": "run_000003",
+      "case_type": "refund_request",
+      "eval_result": "unnecessary_escalation",
+      "outcome": "escalated",
+      "user_message": "Can you refund my order ORD-900003? The SoundPeak earbuds is still sealed and inside the return window.",
+      "tools_used": [
+        "order_lookup",
+        "refund_policy_search",
+        "escalation_service"
+      ],
+      "retry_count": 0,
+      "final_response": "A support specialist will review this refund request and follow up shortly."
+    },
+    {
+      "run_id": "run_000001",
+      "case_type": "shipping_status",
+      "eval_result": "missing_tool_call",
+      "outcome": "failed",
+      "user_message": "My package for order ORD-900001 seems late. What is the delivery date?",
+      "tools_used": [
+        "order_lookup",
+        "knowledge_base_search"
+      ],
+      "retry_count": 0,
+      "final_response": "The order is on its way and should arrive around 4 business days from now."
+    },
+    {
+      "run_id": "run_000008",
+      "case_type": "account_login",
+      "eval_result": "retry_loop",
+      "outcome": "failed",
+      "user_message": "I have tried resetting my password for customer8@example.com, but I still cannot get in.",
+      "tools_used": [
+        "account_lookup",
+        "password_reset"
+      ],
+      "retry_count": 4,
+      "final_response": "The reset process was retried several times and did not restore access."
+    },
+    {
+      "run_id": "run_000023",
+      "case_type": "damaged_item",
+      "eval_result": "wrong_policy_retrieval",
+      "outcome": "failed",
+      "user_message": "My item from ORD-900023 is defective. What are my refund options?",
+      "tools_used": [
+        "order_lookup",
+        "refund_policy_search"
+      ],
+      "retry_count": 0,
+      "final_response": "This item is final sale, so I cannot offer a refund."
+    },
+    {
+      "run_id": "run_000002",
+      "case_type": "account_login",
+      "eval_result": "correct_resolution",
+      "outcome": "resolved",
+      "user_message": "I cannot sign in to my account. Can you help?",
+      "tools_used": [
+        "account_lookup",
+        "password_reset"
+      ],
+      "retry_count": 0,
+      "final_response": "I sent a password reset link to the email on your account."
+    },
+    {
+      "run_id": "run_000072",
+      "case_type": "payment_issue",
+      "eval_result": "low_confidence",
+      "outcome": "awaiting_customer",
+      "user_message": "I am not sure which address is attached to order ORD-900072. Can you check?",
+      "tools_used": [
+        "account_lookup",
+        "knowledge_base_search"
+      ],
+      "retry_count": 0,
+      "final_response": "I found conflicting account details and cannot confidently confirm the address."
+    }
+  ]
+}

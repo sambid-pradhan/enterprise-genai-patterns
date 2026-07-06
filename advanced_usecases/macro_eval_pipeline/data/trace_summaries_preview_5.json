@@ -1,0 +1,59 @@
+[
+  {
+    "run_id": "run_000001",
+    "case_type": "shipping_status",
+    "eval_result": "missing_tool_call",
+    "outcome": "failed",
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "summary": "The user requested a specific delivery date for order ORD-900001. The agent successfully retrieved the order status and general shipping timelines using the `order_lookup` and `knowledge_base_search` tools. However, the execution failed because the agent did not utilize a tracking tool to provide the actual delivery date, resulting in a generic estimate. Consequently, the task was marked as failed due to a missing tool call."
+  },
+  {
+    "run_id": "run_000002",
+    "case_type": "account_login",
+    "eval_result": "correct_resolution",
+    "outcome": "resolved",
+    "tools_used": [
+      "account_lookup",
+      "password_reset"
+    ],
+    "summary": "The user requested assistance with an account login issue. The agent verified the account status using the `account_lookup` tool and subsequently triggered a password reset via the `password_reset` tool. The process was completed successfully without errors or the need for human intervention. The issue was resolved by providing the user with a password reset link."
+  },
+  {
+    "run_id": "run_000003",
+    "case_type": "refund_request",
+    "eval_result": "unnecessary_escalation",
+    "outcome": "escalated",
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "summary": "The user requested a refund for a sealed item within the eligible 30-day window. The agent successfully verified the order status and confirmed policy eligibility using the lookup and policy search tools. Despite meeting all criteria for an automated refund, the agent unnecessarily escalated the request to a human queue. The process concluded with the user being informed that a specialist would review their case."
+  },
+  {
+    "run_id": "run_000004",
+    "case_type": "shipping_status",
+    "eval_result": "missing_tool_call",
+    "outcome": "failed",
+    "tools_used": [
+      "order_lookup",
+      "knowledge_base_search"
+    ],
+    "summary": "The user requested a specific delivery date for order ORD-900004. The agent successfully retrieved the order status and consulted the knowledge base for general shipping timelines but failed to query the actual carrier tracking system. Consequently, the agent provided a generic estimate rather than the specific delivery date requested, resulting in an incomplete resolution."
+  },
+  {
+    "run_id": "run_000005",
+    "case_type": "refund_request",
+    "eval_result": "unnecessary_escalation",
+    "outcome": "escalated",
+    "tools_used": [
+      "order_lookup",
+      "refund_policy_search",
+      "escalation_service"
+    ],
+    "summary": "The user requested a refund for storage bins from order ORD-900005, which the agent confirmed was within the 30-day eligibility window. Despite the item meeting all policy requirements, the agent unnecessarily escalated the request to a human support queue. The process concluded with the agent informing the user that their case had been forwarded for manual review."
+  }
+]
