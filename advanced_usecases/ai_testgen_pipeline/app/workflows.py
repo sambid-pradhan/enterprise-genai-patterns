@@ -1,3 +1,4 @@
+from collections.abc import Callable
 from uuid import UUID
 
 try:
@@ -16,9 +17,18 @@ except ImportError:
 
 from app.steps import WorkflowContext, clone_repo, maybe_create_pr, run_agent, run_pytest, store_results
 
+_context_factory: Callable[[UUID], WorkflowContext] | None = None
+
+
+def configure_workflow_context_factory(factory: Callable[[UUID], WorkflowContext]) -> None:
+    global _context_factory
+    _context_factory = factory
+
 
 def build_workflow_context(run_id: UUID) -> WorkflowContext:
-    raise RuntimeError("Workflow dependencies are configured by app.main at runtime")
+    if _context_factory is None:
+        raise RuntimeError("Workflow context factory has not been configured")
+    return _context_factory(run_id)
 
 
 @DBOS.workflow()
