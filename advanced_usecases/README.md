@@ -6,6 +6,15 @@ Standalone examples for larger GenAI-at-scale patterns.
 
 ```text
 advanced_usecases/
+|-- ai_testgen_pipeline/
+|   |-- app/
+|   |-- prompts/
+|   |-- repos/
+|   |-- sample_target_repo/
+|   |-- tests/
+|   |-- Dockerfile
+|   |-- docker-compose.yml
+|   `-- README.md
 `-- macro_eval_pipeline/
     |-- generate_traces.py
     |-- macro_eval_pipeline.py

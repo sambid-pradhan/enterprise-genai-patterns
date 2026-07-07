@@ -1,0 +1,55 @@
+# AI Test Generation Pipeline
+
+Durable AI coding workflow demo inspired by Duolingo's AI unit test generation pipeline.
+
+## What It Does
+
+```text
+POST /runs
+  -> DBOS workflow
+  -> clone bundled sample repo or Git URL
+  -> run Codex CLI
+  -> run pytest
+  -> store generated diff and pytest output
+  -> optionally create a GitHub PR
+```
+
+## Setup
+
+Copy the environment file:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Start the services:
+
+```powershell
+docker compose up --build
+```
+
+## Local Demo
+
+```powershell
+Invoke-RestMethod -Method Post -Uri http://localhost:8000/runs -ContentType "application/json" -Body '{"repo_url":"sample","target_paths":["src/sample_app/calculator.py"],"create_pr":false}'
+```
+
+Fetch a run:
+
+```powershell
+Invoke-RestMethod -Method Get -Uri http://localhost:8000/runs/<run_id>
+```
+
+## Optional PR Mode
+
+Set `create_pr=true` only for a real GitHub repository and a worker environment where `gh` is authenticated.
+
+PR creation is skipped for the bundled sample repo unless it has a real GitHub remote.
+
+## Out Of Scope In Iteration 1
+
+- GitHub webhooks
+- Retry loops
+- CI polling
+- Multi-agent provider abstraction
+- Scheduled backfill
