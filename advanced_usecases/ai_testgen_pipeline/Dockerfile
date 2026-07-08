@@ -4,7 +4,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git curl ca-certificates nodejs npm gh \
+    && apt-get install -y --no-install-recommends git curl ca-certificates nodejs npm gh bubblewrap \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace

@@ -33,7 +33,7 @@ def clone_repo(context: WorkflowContext) -> Path:
     return repo_path
 
 
-def run_agent(context: WorkflowContext, repo_path: Path) -> None:
+def run_agent(context: WorkflowContext, repo_path: Path) -> int:
     run = context.repository.get_run(context.run_id)
     if run is None:
         raise KeyError(f"run not found: {context.run_id}")
@@ -46,6 +46,7 @@ def run_agent(context: WorkflowContext, repo_path: Path) -> None:
         fields["status"] = RunStatus.AGENT_FAILED
         fields["error"] = result.stderr or result.stdout or "Codex CLI failed"
     context.repository.update_run(context.run_id, **fields)
+    return result.exit_code
 
 
 def run_pytest(context: WorkflowContext, repo_path: Path) -> int:

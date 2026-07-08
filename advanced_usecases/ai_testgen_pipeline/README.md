@@ -22,6 +22,9 @@ Copy the environment file:
 Copy-Item .env.example .env
 ```
 
+Set `OPENROUTER_API_KEY` in `.env` so the Codex CLI inside the app container can call OpenRouter.
+The repo includes `.codex/config.toml`, and Docker Compose mounts it at `/workspace/.codex`.
+
 Start the services:
 
 ```powershell

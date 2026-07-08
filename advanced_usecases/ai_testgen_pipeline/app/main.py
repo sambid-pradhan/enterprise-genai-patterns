@@ -1,3 +1,4 @@
+from threading import Thread
 from uuid import UUID
 
 from fastapi import FastAPI
@@ -12,12 +13,17 @@ from app.pytest_runner import PytestRunner
 from app.repositories import RunRepository, create_engine_from_url, create_schema, get_session_factory
 from app.settings import Settings, get_settings
 from app.steps import WorkflowContext
-from app.workflows import configure_workflow_context_factory, generate_tests_workflow
+from app.workflows import configure_workflow_context_factory, generate_tests_workflow, generate_tests_workflow_impl
 
 
 class DBOSWorkflowStarter(WorkflowStarter):
     def start(self, run_id: str) -> None:
         generate_tests_workflow.start(run_id)
+
+
+class LocalWorkflowStarter(WorkflowStarter):
+    def start(self, run_id: str) -> None:
+        Thread(target=generate_tests_workflow_impl, args=(run_id,), daemon=True).start()
 
 
 def build_repository(settings: Settings) -> RunRepository:
@@ -71,9 +77,10 @@ def create_app(
         repository = build_repository(settings)
     configure_runtime(repository, settings)
     if workflow_starter is None:
-        workflow_starter = DBOSWorkflowStarter()
+        workflow_starter = LocalWorkflowStarter() if settings.app_env == "local" else DBOSWorkflowStarter()
 
     app = FastAPI(title="AI Test Generation Pipeline")
+    app.state.workflow_starter = workflow_starter
     app.include_router(create_router(repository, workflow_starter))
     return app
 

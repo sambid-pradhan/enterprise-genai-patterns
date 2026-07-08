@@ -28,3 +28,4 @@ services:
       - ./repos:/workspace/repos
       - ./prompts:/workspace/prompts
       - ./sample_target_repo:/workspace/sample_target_repo
+      - ./.codex:/workspace/.codex

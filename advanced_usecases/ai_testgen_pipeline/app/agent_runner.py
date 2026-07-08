@@ -25,4 +25,15 @@ class AgentRunner:
             f"Target paths: {', '.join(request.target_paths)}\n"
             f"Test framework: {request.test_framework}\n"
         )
-        return self._runner.run([self._codex, "exec", prompt], cwd=repo_path, timeout_seconds=self._timeout)
+        return self._runner.run(
+            [
+                self._codex,
+                "exec",
+                "--skip-git-repo-check",
+                "--sandbox",
+                "workspace-write",
+                prompt,
+            ],
+            cwd=repo_path,
+            timeout_seconds=self._timeout,
+        )

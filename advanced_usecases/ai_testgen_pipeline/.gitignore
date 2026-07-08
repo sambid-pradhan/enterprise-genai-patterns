@@ -1,0 +1,11 @@
+.env
+.agents/
+.pytest_cache/
+__pycache__/
+**/__pycache__/
+repos/*
+!repos/.gitkeep
+skills-lock.json
+.codex/*
+!.codex/
+!.codex/config.toml

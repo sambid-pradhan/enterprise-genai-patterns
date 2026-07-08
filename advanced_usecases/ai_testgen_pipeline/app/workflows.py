@@ -31,12 +31,18 @@ def build_workflow_context(run_id: UUID) -> WorkflowContext:
     return _context_factory(run_id)
 
 
-@DBOS.workflow()
-def generate_tests_workflow(run_id: str) -> dict[str, str | None]:
+def generate_tests_workflow_impl(run_id: str) -> dict[str, str | None]:
     context = build_workflow_context(UUID(run_id))
     repo_path = clone_repo(context)
-    run_agent(context, repo_path)
+    agent_exit_code = run_agent(context, repo_path)
+    if agent_exit_code != 0:
+        return {"run_id": run_id, "pr_url": None}
     pytest_exit_code = run_pytest(context, repo_path)
     store_results(context, repo_path)
     pr_url = maybe_create_pr(context, repo_path, pytest_exit_code)
     return {"run_id": run_id, "pr_url": pr_url}
+
+
+@DBOS.workflow()
+def generate_tests_workflow(run_id: str) -> dict[str, str | None]:
+    return generate_tests_workflow_impl(run_id)
