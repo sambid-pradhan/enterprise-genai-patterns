@@ -18,6 +18,12 @@ def test_add_basic():
     assert result == Decimal("3.3")
 
 
+def test_add_with_zero():
+    result = calculator.add(Decimal("4.25"), Decimal("0"))
+    assert isinstance(result, Decimal)
+    assert result == Decimal("4.25")
+
+
 def test_subtract_basic():
     result = calculator.subtract(Decimal("5.5"), Decimal("2.25"))
     assert isinstance(result, Decimal)
