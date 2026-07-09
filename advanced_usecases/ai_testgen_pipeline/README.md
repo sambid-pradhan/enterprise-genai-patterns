@@ -49,6 +49,37 @@ Set `create_pr=true` only for a real GitHub repository and a worker environment 
 
 PR creation is skipped for the bundled sample repo unless it has a real GitHub remote.
 
+## GitHub Label Webhook Demo
+
+Iteration 2 supports a GitHub label trigger:
+
+```text
+pull_request.labeled(generate-tests)
+  -> POST /webhooks/github
+  -> changed Python files become target_paths
+  -> existing DBOS workflow runs
+  -> AI branch ai-tests/pr-<number>
+  -> separate AI PR
+```
+
+Set `GITHUB_WEBHOOK_SECRET` in `.env` for signed GitHub deliveries. If the value is empty, unsigned local webhook requests are accepted for demo use.
+
+Configure a GitHub webhook:
+
+```text
+Payload URL: https://<your-ngrok-host>/webhooks/github
+Content type: application/json
+Secret: same value as GITHUB_WEBHOOK_SECRET
+Event: Pull requests
+```
+
+Demo:
+
+1. Open a pull request.
+2. Add the label `generate-tests`.
+3. Fetch the created run through `GET /runs/{id}`.
+4. Inspect `pr_url` and `ci_status`.
+
 ## Out Of Scope In Iteration 1
 
 - GitHub webhooks

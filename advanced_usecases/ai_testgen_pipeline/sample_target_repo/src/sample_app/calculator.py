@@ -5,6 +5,14 @@ def add(left: Decimal, right: Decimal) -> Decimal:
     return left + right
 
 
+def subtract(left: Decimal, right: Decimal) -> Decimal:
+    return left - right
+
+
+def multiply(left: Decimal, right: Decimal) -> Decimal:
+    return left * right
+
+
 def divide(numerator: Decimal, denominator: Decimal) -> Decimal:
     if denominator == 0:
         raise ValueError("denominator must not be zero")

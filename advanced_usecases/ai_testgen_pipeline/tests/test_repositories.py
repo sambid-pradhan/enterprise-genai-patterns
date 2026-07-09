@@ -1,5 +1,7 @@
+from sqlalchemy import text
+
 from app.models import RunCreateRequest, RunStatus
-from app.repositories import RunRepository
+from app.repositories import RunRepository, create_schema
 
 
 def test_create_and_fetch_run(session_factory):
@@ -15,6 +17,19 @@ def test_create_and_fetch_run(session_factory):
     assert fetched.request.repo_url == "sample"
 
 
+def test_create_schema_adds_missing_run_columns(session_factory):
+    engine = session_factory.kw["bind"]
+    with engine.begin() as connection:
+        connection.execute(text("ALTER TABLE runs DROP COLUMN ci_status"))
+
+    create_schema(engine)
+    repo = RunRepository(session_factory)
+    created = repo.create_run(RunCreateRequest(repo_url="sample", target_paths=["a.py"]))
+    updated = repo.update_run(created.id, ci_status="[]")
+
+    assert updated.ci_status == "[]"
+
+
 def test_update_run_stores_outputs(session_factory):
     repo = RunRepository(session_factory)
     created = repo.create_run(
@@ -28,6 +43,7 @@ def test_update_run_stores_outputs(session_factory):
         pytest_stdout="stdout",
         pytest_stderr="stderr",
         generated_diff="diff",
+        ci_status='[{"name":"tests","state":"SUCCESS"}]',
         error="tests failed",
     )
 
@@ -36,6 +52,7 @@ def test_update_run_stores_outputs(session_factory):
     assert updated.pytest_stdout == "stdout"
     assert updated.pytest_stderr == "stderr"
     assert updated.generated_diff == "diff"
+    assert updated.ci_status == '[{"name":"tests","state":"SUCCESS"}]'
     assert updated.error == "tests failed"
 
 

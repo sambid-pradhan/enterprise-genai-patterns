@@ -56,8 +56,14 @@ class GitClient:
             return False
         return "github.com" in result.stdout
 
-    def create_branch_commit_push(self, repo_path: Path, run_id: str, base_branch: str) -> str:
-        branch = f"ai-tests/{run_id}"
+    def create_branch_commit_push(
+        self,
+        repo_path: Path,
+        run_id: str,
+        base_branch: str,
+        branch_name: str | None = None,
+    ) -> str:
+        branch = branch_name or f"ai-tests/{run_id}"
         commands = [
             [self._git, "checkout", "-b", branch],
             [self._git, "add", "."],

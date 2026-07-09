@@ -9,3 +9,5 @@ skills-lock.json
 .codex/*
 !.codex/
 !.codex/config.toml
+.codex\
+.superpowers\

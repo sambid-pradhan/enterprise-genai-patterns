@@ -70,6 +70,8 @@ def configure_runtime(repository: RunRepository, settings: Settings) -> None:
 def create_app(
     repository: RunRepository | None = None,
     workflow_starter: WorkflowStarter | None = None,
+    github_client: GitHubClient | None = None,
+    github_webhook_secret: str | None = None,
 ) -> FastAPI:
     configure_logging()
     settings = get_settings()
@@ -78,10 +80,16 @@ def create_app(
     configure_runtime(repository, settings)
     if workflow_starter is None:
         workflow_starter = LocalWorkflowStarter() if settings.app_env == "local" else DBOSWorkflowStarter()
+    if github_client is None:
+        github_client = GitHubClient(CommandRunner(), settings.gh_command, settings.git_timeout_seconds)
+    if github_webhook_secret is None:
+        github_webhook_secret = settings.github_webhook_secret
 
     app = FastAPI(title="AI Test Generation Pipeline")
     app.state.workflow_starter = workflow_starter
-    app.include_router(create_router(repository, workflow_starter))
+    app.include_router(
+        create_router(repository, workflow_starter, github_client, github_webhook_secret)
+    )
     return app
 
 

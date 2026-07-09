@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     pytest_command: str = Field(default="pytest", alias="PYTEST_COMMAND")
     git_command: str = Field(default="git", alias="GIT_COMMAND")
     gh_command: str = Field(default="gh", alias="GH_COMMAND")
+    github_webhook_secret: str | None = Field(default=None, alias="GITHUB_WEBHOOK_SECRET")
     agent_timeout_seconds: int = Field(default=1800, alias="AGENT_TIMEOUT_SECONDS")
     pytest_timeout_seconds: int = Field(default=600, alias="PYTEST_TIMEOUT_SECONDS")
     git_timeout_seconds: int = Field(default=300, alias="GIT_TIMEOUT_SECONDS")

@@ -6,3 +6,6 @@ model = "openai/gpt-5-mini"
 name = "openrouter"
 base_url = "https://openrouter.ai/api/v1"
 env_key = "OPENROUTER_API_KEY"
+
+[projects."/workspace/repos/6b9ee6f4-0084-41d3-84ff-eb4b63dc8fcc"]
+trust_level = "trusted"

@@ -2,8 +2,10 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, status
 
+from app.github_client import GitHubClient
 from app.models import RunCreateRequest, RunCreateResponse, RunRecord
 from app.repositories import RunRepository
+from app.webhooks import create_github_webhook_router
 
 
 class WorkflowStarter:
@@ -14,6 +16,8 @@ class WorkflowStarter:
 def create_router(
     repository: RunRepository,
     workflow_starter: WorkflowStarter,
+    github_client: GitHubClient,
+    github_webhook_secret: str | None,
 ) -> APIRouter:
     router = APIRouter()
 
@@ -50,5 +54,14 @@ def create_router(
     @router.get("/runs", response_model=list[RunRecord])
     def list_runs(run_repository: RunRepository = Depends(get_repository)) -> list[RunRecord]:
         return run_repository.list_runs()
+
+    router.include_router(
+        create_github_webhook_router(
+            repository,
+            workflow_starter,
+            github_client,
+            github_webhook_secret,
+        )
+    )
 
     return router

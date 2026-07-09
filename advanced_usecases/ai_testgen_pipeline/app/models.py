@@ -24,6 +24,7 @@ class RunCreateRequest(BaseModel):
     base_branch: str = "main"
     test_framework: Literal["pytest"] = "pytest"
     create_pr: bool = False
+    source_pr_number: int | None = None
 
     @field_validator("repo_url", "base_branch")
     @classmethod
@@ -62,4 +63,5 @@ class RunRecord(BaseModel):
     pytest_stderr: str | None = None
     generated_diff: str | None = None
     pr_url: str | None = None
+    ci_status: str | None = None
     error: str | None = None

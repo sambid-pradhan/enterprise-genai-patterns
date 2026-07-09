@@ -56,3 +56,26 @@ def test_has_github_remote_detects_github_url(tmp_path):
     client = GitClient(FakeRunner(), "git", tmp_path / "repos", tmp_path / "sample", 30)
 
     assert client.has_github_remote(Path("repo")) is True
+
+
+def test_create_branch_commit_push_uses_branch_name_override(tmp_path):
+    class Runner:
+        def __init__(self):
+            self.commands = []
+
+        def run(self, command, cwd=None, timeout_seconds=None):
+            self.commands.append(command)
+            return CommandResult(list(command), str(cwd), 0, "", "")
+
+    runner = Runner()
+    client = GitClient(runner, "git", tmp_path / "repos", tmp_path / "sample", 30)
+
+    branch = client.create_branch_commit_push(
+        tmp_path,
+        "run-id",
+        "feature/payment",
+        branch_name="ai-tests/pr-123",
+    )
+
+    assert branch == "ai-tests/pr-123"
+    assert runner.commands[0] == ["git", "checkout", "-b", "ai-tests/pr-123"]

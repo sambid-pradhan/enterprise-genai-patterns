@@ -21,6 +21,17 @@ def test_run_create_request_requires_target_paths():
         RunCreateRequest(repo_url="sample", target_paths=[])
 
 
+def test_run_create_request_accepts_source_pr_number():
+    request = RunCreateRequest(
+        repo_url="https://github.com/acme/repo.git",
+        target_paths=["src/app.py"],
+        create_pr=True,
+        source_pr_number=123,
+    )
+
+    assert request.source_pr_number == 123
+
+
 def test_run_status_values_are_api_stable():
     assert RunStatus.QUEUED.value == "queued"
     assert RunStatus.RUNNING.value == "running"

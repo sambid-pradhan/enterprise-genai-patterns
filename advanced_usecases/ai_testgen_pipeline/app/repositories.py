@@ -2,7 +2,7 @@ from datetime import UTC, datetime
 from typing import Any
 from uuid import UUID, uuid4
 
-from sqlalchemy import JSON, DateTime, Integer, String, Text, create_engine, select
+from sqlalchemy import JSON, DateTime, Integer, String, Text, create_engine, inspect, select
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column, sessionmaker
 
@@ -29,6 +29,7 @@ class RunRow(Base):
     pytest_stderr: Mapped[str | None] = mapped_column(Text)
     generated_diff: Mapped[str | None] = mapped_column(Text)
     pr_url: Mapped[str | None] = mapped_column(Text)
+    ci_status: Mapped[str | None] = mapped_column(Text)
     error: Mapped[str | None] = mapped_column(Text)
 
 
@@ -38,6 +39,22 @@ def create_engine_from_url(database_url: str) -> Engine:
 
 def create_schema(engine: Engine) -> None:
     Base.metadata.create_all(engine)
+    _add_missing_run_columns(engine)
+
+
+def _add_missing_run_columns(engine: Engine) -> None:
+    inspector = inspect(engine)
+    if "runs" not in inspector.get_table_names():
+        return
+
+    existing_columns = {column["name"] for column in inspector.get_columns("runs")}
+    with engine.begin() as connection:
+        for column in RunRow.__table__.columns:
+            if column.name in existing_columns:
+                continue
+            column_type = column.type.compile(dialect=connection.dialect)
+            nullable = "" if column.nullable else " NOT NULL"
+            connection.exec_driver_sql(f"ALTER TABLE runs ADD COLUMN {column.name} {column_type}{nullable}")
 
 
 def get_session_factory(engine: Engine) -> sessionmaker[Session]:
@@ -104,5 +121,6 @@ class RunRepository:
             pytest_stderr=row.pytest_stderr,
             generated_diff=row.generated_diff,
             pr_url=row.pr_url,
+            ci_status=row.ci_status,
             error=row.error,
         )

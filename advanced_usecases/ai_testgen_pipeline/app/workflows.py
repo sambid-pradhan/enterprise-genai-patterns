@@ -38,6 +38,14 @@ def generate_tests_workflow_impl(run_id: str) -> dict[str, str | None]:
     if agent_exit_code != 0:
         return {"run_id": run_id, "pr_url": None}
     pytest_exit_code = run_pytest(context, repo_path)
+    if pytest_exit_code != 0:
+        run = context.repository.get_run(context.run_id)
+        feedback = ""
+        if run is not None:
+            feedback = "\n".join(filter(None, [run.pytest_stdout, run.pytest_stderr]))
+        agent_exit_code = run_agent(context, repo_path, pytest_feedback=feedback)
+        if agent_exit_code == 0:
+            pytest_exit_code = run_pytest(context, repo_path)
     store_results(context, repo_path)
     pr_url = maybe_create_pr(context, repo_path, pytest_exit_code)
     return {"run_id": run_id, "pr_url": pr_url}

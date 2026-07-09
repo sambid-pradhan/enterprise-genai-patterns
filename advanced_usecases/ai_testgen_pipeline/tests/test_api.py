@@ -13,6 +13,11 @@ class FakeWorkflowStarter:
         self.started.append(run_id)
 
 
+class FakeGitHubClient:
+    def get_pr_changed_files(self, repository_full_name, pr_number):
+        return ["src/app.py"]
+
+
 def test_post_runs_creates_run_and_starts_workflow(session_factory):
     repository = RunRepository(session_factory)
     workflow = FakeWorkflowStarter()
@@ -54,3 +59,35 @@ def test_get_runs_lists_runs(session_factory):
 
     assert response.status_code == 200
     assert len(response.json()) == 1
+
+
+def test_app_includes_github_webhook_route(session_factory):
+    repository = RunRepository(session_factory)
+    workflow = FakeWorkflowStarter()
+    app = create_app(
+        repository=repository,
+        workflow_starter=workflow,
+        github_client=FakeGitHubClient(),
+        github_webhook_secret=None,
+    )
+    client = TestClient(app)
+
+    response = client.post(
+        "/webhooks/github",
+        json={
+            "action": "labeled",
+            "label": {"name": "generate-tests"},
+            "repository": {
+                "full_name": "acme/repo",
+                "clone_url": "https://github.com/acme/repo.git",
+            },
+            "pull_request": {
+                "number": 123,
+                "head": {"ref": "feature/payment"},
+            },
+        },
+        headers={"X-GitHub-Event": "pull_request"},
+    )
+
+    assert response.status_code == 202
+    assert workflow.started == [response.json()["id"]]
