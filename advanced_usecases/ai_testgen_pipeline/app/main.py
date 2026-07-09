@@ -15,6 +15,8 @@ from app.settings import Settings, get_settings
 from app.steps import WorkflowContext
 from app.workflows import configure_workflow_context_factory, generate_tests_workflow, generate_tests_workflow_impl
 
+_USE_SETTINGS_SECRET = object()
+
 
 class DBOSWorkflowStarter(WorkflowStarter):
     def start(self, run_id: str) -> None:
@@ -71,7 +73,7 @@ def create_app(
     repository: RunRepository | None = None,
     workflow_starter: WorkflowStarter | None = None,
     github_client: GitHubClient | None = None,
-    github_webhook_secret: str | None = None,
+    github_webhook_secret: str | None | object = _USE_SETTINGS_SECRET,
 ) -> FastAPI:
     configure_logging()
     settings = get_settings()
@@ -82,7 +84,7 @@ def create_app(
         workflow_starter = LocalWorkflowStarter() if settings.app_env == "local" else DBOSWorkflowStarter()
     if github_client is None:
         github_client = GitHubClient(CommandRunner(), settings.gh_command, settings.git_timeout_seconds)
-    if github_webhook_secret is None:
+    if github_webhook_secret is _USE_SETTINGS_SECRET:
         github_webhook_secret = settings.github_webhook_secret
 
     app = FastAPI(title="AI Test Generation Pipeline")
